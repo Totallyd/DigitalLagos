@@ -11,10 +11,10 @@
         <!-- CSS are placed here -->
         <!-- {{ HTML::style('//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css') }}
         {{ HTML::style('//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css') }} -->
-        {{ HTML::style(asset('public/css/bootstrap.css')) }}
-        <!-- {{ HTML::style(asset('public/css/bootstrap.min.css')) }} -->
-        {{ HTML::style(asset('public/css/style.css')) }}
-        {{ HTML::style(asset('public/css/jquery-ui-1.10.4.custom.min.css')) }}
+        {{ HTML::style(asset('css/bootstrap.css')) }}
+        <!-- {{ HTML::style(asset('css/bootstrap.min.css')) }} -->
+        {{ HTML::style(asset('css/style.css')) }}
+        {{ HTML::style(asset('css/jquery-ui-1.10.4.custom.min.css')) }}
 
         <style>
         @section('styles')
@@ -39,7 +39,7 @@
                     
                     
 
-                    <img src="{{{ URL::to('public/img/logo.png') }}}"/>
+                    <img src="{{{ URL::to('img/logo.png') }}}"/>
 
                     <!-- Everything you want hidden at 940px or less, place within here -->
                     <div class="nav-collapse collapse">
@@ -49,10 +49,10 @@
                     </div>
 
                     @if(Auth::check())
-                        <div class="float-right"><img height="50" src="{{{ URL::to('public/img/avatar.png') }}}"></div>
+                        <div class="float-right"><img height="50" src="{{{ URL::to('img/avatar.png') }}}"></div>
                         <div class="float-right">
                             <div class="float-left"><span style="color:#FFFFFF">You logged in as</span> <span style="color:#3DB0FC"> {{ucfirst(Auth::user()->username)}} </span></div><br>
-                            <div class="float-right"><img height="20" src="{{{ URL::to('public/img/lock.png') }}}">
+                            <div class="float-right"><img height="20" src="{{{ URL::to('img/lock.png') }}}">
                                 <a class="logout" href="{{{ URL::to('admin/logout') }}}">Logout</a>
                             </div>
                                                 
@@ -73,20 +73,20 @@
 
                         <div>
                             <div id="main-search">
-                            <div id="search-arrow" style="float:left;margin-top:10px"><img src="{{{ URL::to('public/img/down-arrow.png') }}}"></div>
+                            <div id="search-arrow" style="float:left;margin-top:10px"><img src="{{{ URL::to('img/down-arrow.png') }}}"></div>
                             <div id="search-menu" style="position:absolute;border:1px black;height:270px; width:150px; background-color:black; display:none;padding:15px;margin-top:35px">
-                                <span><img height="30" src="{{{ URL::to('public/img/all.png') }}}"> All</span><br/>
-                                <span><img height="30" src="{{{ URL::to('public/img/avatar.png') }}}"> Members</span><br/>
-                                <span><img height="30" src="{{{ URL::to('public/img/sub-admin.png') }}}"> Sub-Admin</span><br/>
-                                <span><img height="30" src="{{{ URL::to('public/img/listing.png') }}}"> Listing</span><br/>
-                                <span><img height="30" src="{{{ URL::to('public/img/blog.png') }}}"> Blog</span><br/>
-                                <span><img height="30" src="{{{ URL::to('public/img/gallery.png') }}}"> Gallery</span><br/>
-                                <span><img height="30" src="{{{ URL::to('public/img/content.png') }}}"> Content</span><br/>
-                                <span><img height="30" src="{{{ URL::to('public/img/message.png') }}}"> Message</span><br/>
+                                <span><img height="30" src="{{{ URL::to('img/all.png') }}}"> All</span><br/>
+                                <span><img height="30" src="{{{ URL::to('img/avatar.png') }}}"> Members</span><br/>
+                                <span><img height="30" src="{{{ URL::to('img/sub-admin.png') }}}"> Sub-Admin</span><br/>
+                                <span><img height="30" src="{{{ URL::to('img/listing.png') }}}"> Listing</span><br/>
+                                <span><img height="30" src="{{{ URL::to('img/blog.png') }}}"> Blog</span><br/>
+                                <span><img height="30" src="{{{ URL::to('img/gallery.png') }}}"> Gallery</span><br/>
+                                <span><img height="30" src="{{{ URL::to('img/content.png') }}}"> Content</span><br/>
+                                <span><img height="30" src="{{{ URL::to('img/message.png') }}}"> Message</span><br/>
                             </div>
                             </div>
                             <div style="float:left; padding-right:2px;"><input type="text" name="search" value="" class="form-control searchbox" placeholder="Enter Keywords to Search"></div>
-                            <div style="float:left; margin-top:5px"><img width="30" height="30" src="{{{ URL::to('public/img/search.png') }}}"></div>
+                            <div style="float:left; margin-top:5px"><img width="30" height="30" src="{{{ URL::to('img/search.png') }}}"></div>
                         </div>
 
                     </div>
@@ -219,9 +219,9 @@
         </div>
 
         <!-- Scripts are placed here -->
-        {{ HTML::script(asset('public/js/jquery-1.10.2.js')) }}
-        {{ HTML::script(asset('public/js/jquery-ui-1.10.4.custom.min.js')) }}
-        {{ HTML::script(asset('public/js/bootstrap.min.js')) }}
+        {{ HTML::script(asset('js/jquery-1.10.2.js')) }}
+        {{ HTML::script(asset('js/jquery-ui-1.10.4.custom.min.js')) }}
+        {{ HTML::script(asset('js/bootstrap.min.js')) }}
 
 
         <script>

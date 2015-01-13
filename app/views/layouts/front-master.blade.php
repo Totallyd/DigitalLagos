@@ -9,25 +9,25 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!-- CSS are placed here -->
-        {{ HTML::style(asset('public/bootstrap/css/bootstrap.css')) }}
-        {{ HTML::style(asset('public/bootstrap/css/bootstrap-responsive.css')) }}
-        {{ HTML::style(asset('public/css/responsive-tabs.css')) }}
-        {{ HTML::style(asset('public/css/styles.css')) }}
-        {{ HTML::style(asset('public/css/jquery-ui-1.10.4.custom.min.css')) }}
-        <!-- {{ HTML::style(asset('public/css/bootstrapValidator.css')) }} -->
+        {{ HTML::style(asset('bootstrap/css/bootstrap.css')) }}
+        {{ HTML::style(asset('bootstrap/css/bootstrap-responsive.css')) }}
+        {{ HTML::style(asset('css/responsive-tabs.css')) }}
+        {{ HTML::style(asset('css/styles.css')) }}
+        {{ HTML::style(asset('css/jquery-ui-1.10.4.custom.min.css')) }}
+        <!-- {{ HTML::style(asset('css/bootstrapValidator.css')) }} -->
 
     <!-- Include the FontAwesome CSS if you want to use feedback icons provided by FontAwesome -->
     <!--<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />-->
 
          <!-- Scripts are placed here -->
-        {{ HTML::script(asset('public/js/jquery-1.10.2.js')) }}
-        {{ HTML::script(asset('public/js/jquery-ui-1.10.4.custom.min.js')) }}
-        {{ HTML::script(asset('public/js/bootstrap.min.js')) }}
-        {{ HTML::script(asset('public/js/jquery.lightbox_me.js')) }}
-        {{ HTML::script(asset('public/js/jquery.responsiveTabs.min.js')) }}
-        {{ HTML::script(asset('public/js/jquery.validate.js')) }}
-        <!-- {{ HTML::script(asset('public/js/bootstrapValidator.js')) }} -->
-        {{ HTML::script(asset('public/js/jquery-tooltip.js')) }}
+        {{ HTML::script(asset('js/jquery-1.10.2.js')) }}
+        {{ HTML::script(asset('js/jquery-ui-1.10.4.custom.min.js')) }}
+        {{ HTML::script(asset('js/bootstrap.min.js')) }}
+        {{ HTML::script(asset('js/jquery.lightbox_me.js')) }}
+        {{ HTML::script(asset('js/jquery.responsiveTabs.min.js')) }}
+        {{ HTML::script(asset('js/jquery.validate.js')) }}
+        <!-- {{ HTML::script(asset('js/bootstrapValidator.js')) }} -->
+        {{ HTML::script(asset('js/jquery-tooltip.js')) }}
     
         <style type="text/css">
 
@@ -88,7 +88,7 @@
     <header>
       <div class="container">
         <div class="row-fluid">
-          <div class="span6"> <a href="{{{ URL::to('/') }}}"><img src="{{{ URL::to('public/img/logo.png') }}}" alt="Digital Lagos TV" border="0" /></a> </div>
+          <div class="span6"> <a href="{{{ URL::to('/') }}}"><img src="{{{ URL::to('img/logo.png') }}}" alt="Digital Lagos TV" border="0" /></a> </div>
 
           @if(Auth::check())
             <div class="span6 profile-nav">
@@ -282,24 +282,24 @@
           <h3 class="left_out" class="sprited">
           Not a Member yet? <span><a href="membership">Register Here</a></span> <br/> <span><a href="forgotpassword">Forgot Password?</a></span>
           </h3>
-          <a id="close_x" class="close sprited" href="#"><img src="{{{ URL::to('public/img/u22.png') }}}" alt="close" borer="0" /></a>
+          <a id="close_x" class="close sprited" href="#"><img src="{{{ URL::to('img/u22.png') }}}" alt="close" borer="0" /></a>
           <hr />
           <h3 class="left_out" class="sprited">
             <strong>Login With</strong>
             <a href="#">
-              <img src="{{{ URL::to('public/img/google.png') }}}" alt="Social" style="margin-left:15px; position:relative; top:-5px; width:40px; height:40px;" onmouseover="this.src='{{{ URL::to('public/img/google_h.png') }}}'" onmouseout="this.src='{{{ URL::to('public/img/google.png') }}}'" />
+              <img src="{{{ URL::to('img/google.png') }}}" alt="Social" style="margin-left:15px; position:relative; top:-5px; width:40px; height:40px;" onmouseover="this.src='{{{ URL::to('img/google_h.png') }}}'" onmouseout="this.src='{{{ URL::to('img/google.png') }}}'" />
             </a>
             
             <a href="#">
-              <img src="{{{ URL::to('public/img/linkedin.png') }}}" alt="Social" style="margin-left:15px; position:relative; top:-5px; width:40px; height:40px;" onmouseover="this.src='{{{ URL::to('public/img/linkedin_h.png') }}}'" onmouseout="this.src='{{{ URL::to('public/img/linkedin.png') }}}'" />
+              <img src="{{{ URL::to('img/linkedin.png') }}}" alt="Social" style="margin-left:15px; position:relative; top:-5px; width:40px; height:40px;" onmouseover="this.src='{{{ URL::to('img/linkedin_h.png') }}}'" onmouseout="this.src='{{{ URL::to('img/linkedin.png') }}}'" />
             </a>
             
             <a href="#">
-              <img src="{{{ URL::to('public/img/twitte.png') }}}" alt="Social" style="margin-left:15px; position:relative; top:-5px; width:40px; height:40px;" onmouseover="this.src='{{{ URL::to('public/img/twitter_h.png') }}}'" onmouseout="this.src='{{{ URL::to('public/img/twitte.png') }}}'" />
+              <img src="{{{ URL::to('img/twitte.png') }}}" alt="Social" style="margin-left:15px; position:relative; top:-5px; width:40px; height:40px;" onmouseover="this.src='{{{ URL::to('img/twitter_h.png') }}}'" onmouseout="this.src='{{{ URL::to('img/twitte.png') }}}'" />
             </a>
             
             <a href="#">
-              <img src="{{{ URL::to('public/img/facebook.png') }}}" alt="Social" style="margin-left:15px; position:relative; top:-5px; width:40px; height:40px;" onmouseover="this.src='{{{ URL::to('public/img/faceook_h.png') }}}'" onmouseout="this.src='{{{ URL::to('public/img/facebook.png') }}}'" />
+              <img src="{{{ URL::to('img/facebook.png') }}}" alt="Social" style="margin-left:15px; position:relative; top:-5px; width:40px; height:40px;" onmouseover="this.src='{{{ URL::to('img/faceook_h.png') }}}'" onmouseout="this.src='{{{ URL::to('img/facebook.png') }}}'" />
             </a>
           </h3>
         <!-- </form> -->

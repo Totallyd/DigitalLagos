@@ -4,13 +4,13 @@
 
 @section('content')
   
-  {{ HTML::style(asset('public/css/evoslider/css/default/reset.css')) }}
-  {{ HTML::style(asset('public/css/evoslider/css/evoslider.css')) }}
-  {{ HTML::style(asset('public/css/evoslider/css/default/default.css')) }}  
+  {{ HTML::style(asset('css/evoslider/css/default/reset.css')) }}
+  {{ HTML::style(asset('css/evoslider/css/evoslider.css')) }}
+  {{ HTML::style(asset('css/evoslider/css/default/default.css')) }}
   
-  {{ HTML::script(asset('public/js/evoslider/js/jquery-1.7.1.min.js')) }}
-  {{ HTML::script(asset('public/js/evoslider/js/jquery.easing.1.3.js')) }}
-  {{ HTML::script(asset('public/js/evoslider/js/jquery.evoslider.lite-1.1.0.js')) }}
+  {{ HTML::script(asset('js/evoslider/js/jquery-1.7.1.min.js')) }}
+  {{ HTML::script(asset('js/evoslider/js/jquery.easing.1.3.js')) }}
+  {{ HTML::script(asset('js/evoslider/js/jquery.evoslider.lite-1.1.0.js')) }}
  <!--  // <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
   // <script type="text/javascript" src="js/jquery.evoslider.lite-1.1.0.js"></script> -->
 <style type="text/css">
@@ -47,7 +47,7 @@
       <!-- <dd>
          slide one content          
       </dd> -->
-      <dd data-src="{{{ URL::to('public/img/slide_1.jpg') }}}" data-text="overlay">
+      <dd data-src="{{{ URL::to('img/slide_1.jpg') }}}" data-text="overlay">
         <img class="attachment-post-thumbnail wp-post-image" width="481" height="439" alt="slide_1" src="http://digitallagos.tv/wp-content/uploads/2013/11/slide_1.jpg">
         <div class="evoText">
           <h3>Collaborating </h3>

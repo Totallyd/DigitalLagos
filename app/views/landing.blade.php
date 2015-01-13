@@ -3,17 +3,17 @@
 <head>
 <title>Digital Lagos TV</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-{{ HTML::style(asset('public/bootstrap/css/bootstrap.css')) }}
-{{ HTML::style(asset('public/bootstrap/css/bootstrap-responsive.css')) }}
-{{ HTML::style(asset('public/css/styles.css')) }}
-{{ HTML::style(asset('public/css/landing-css.css')) }}
+{{ HTML::style(asset('bootstrap/css/bootstrap.css')) }}
+{{ HTML::style(asset('bootstrap/css/bootstrap-responsive.css')) }}
+{{ HTML::style(asset('css/styles.css')) }}
+{{ HTML::style(asset('css/landing-css.css')) }}
 
-{{ HTML::script(asset('public/js/jquery-1.10.2.js')) }}
-{{ HTML::script(asset('public/js/jquery-ui-1.10.4.custom.min.js')) }}
-{{ HTML::script(asset('public/js/bootstrap.min.js')) }}
-{{ HTML::script(asset('public/js/jquery.lightbox_me.js')) }}
-{{ HTML::script(asset('public/js/masonry.pkgd.min.js')) }}
-{{ HTML::script(asset('public/js/jquery.validate.js')) }}
+{{ HTML::script(asset('js/jquery-1.10.2.js')) }}
+{{ HTML::script(asset('js/jquery-ui-1.10.4.custom.min.js')) }}
+{{ HTML::script(asset('js/bootstrap.min.js')) }}
+{{ HTML::script(asset('js/jquery.lightbox_me.js')) }}
+{{ HTML::script(asset('js/masonry.pkgd.min.js')) }}
+{{ HTML::script(asset('js/jquery.validate.js')) }}
 
 
 <script type="text/javascript">
@@ -78,7 +78,7 @@ jQuery(window).load(function() {
     <header>
       <div class="container">
         <div class="row-fluid">
-          <div class="span6"> <a href="#"><img src="{{{ URL::to('public/img/logo.png') }}}" alt="Digital Lagos TV" border="0" /></a> </div>
+          <div class="span6"> <a href="#"><img src="{{{ URL::to('img/logo.png') }}}" alt="Digital Lagos TV" border="0" /></a> </div>
           <div class="span6 profile-nav"> <a href="#" id="login_btn" class="orrange pleft">Login</a> </div>
           <div class="clear"></div>
           <div id="getstarted_txt">
@@ -107,38 +107,38 @@ jQuery(window).load(function() {
           <br/>
           <br/>
           <div class="masonry-container" id="photos">
-            <a href="#"><img class="work-masonry-thumb" src="{{{ URL::to('public/img/work/1.png') }}}" alt="img"></a>
-            <a href="#"><img class="work-masonry-thumb" src="{{{ URL::to('public/img/work/2.png') }}}" alt="img"></a>
-            <a href="#"><img class="work-masonry-thumb" src="{{{ URL::to('public/img/work/3.png') }}}" alt="img"></a>
-            <a href="#"><img class="work-masonry-thumb" src="{{{ URL::to('public/img/work/4.png') }}}" alt="img"></a>
-            <a href="#"><img class="work-masonry-thumb" src="{{{ URL::to('public/img/work/5.png') }}}" alt="img"></a>
-            <a href="#"><img class="work-masonry-thumb" src="{{{ URL::to('public/img/work/6.png') }}}" alt="img"></a>
+            <a href="#"><img class="work-masonry-thumb" src="{{{ URL::to('img/work/1.png') }}}" alt="img"></a>
+            <a href="#"><img class="work-masonry-thumb" src="{{{ URL::to('img/work/2.png') }}}" alt="img"></a>
+            <a href="#"><img class="work-masonry-thumb" src="{{{ URL::to('img/work/3.png') }}}" alt="img"></a>
+            <a href="#"><img class="work-masonry-thumb" src="{{{ URL::to('img/work/4.png') }}}" alt="img"></a>
+            <a href="#"><img class="work-masonry-thumb" src="{{{ URL::to('img/work/5.png') }}}" alt="img"></a>
+            <a href="#"><img class="work-masonry-thumb" src="{{{ URL::to('img/work/6.png') }}}" alt="img"></a>
           </div>
           <h2><span style="color:#666666;">Who&rsquo;s using</span> Digitallagos.tv</h2>
           <div id="clients">
             <ul>
-              <li><img src="{{{ URL::to('public/img/clients/1.jpg') }}}" alt="clients" /><span>USA Today Sports</span></li>
-              <li><img src="{{{ URL::to('public/img/clients/2.jpg') }}}" alt="clients" /><span>Fast Company</span></li>
-              <li><img src="{{{ URL::to('public/img/clients/3.jpg') }}}" alt="clients" /><span>MG Siegler</span></li>
-              <li><img src="{{{ URL::to('public/img/clients/4.jpg') }}}" alt="clients" /><span>James Fallows</span></li>
-              <li><img src="{{{ URL::to('public/img/clients/5.jpg') }}}" alt="clients" /><span>Buzzfeed</span></li>
-              <li><img src="{{{ URL::to('public/img/clients/6.jpg') }}}" alt="clients" /><span>Amanda Hesser</span></li>
-              <li><img src="{{{ URL::to('public/img/clients/7.jpg') }}}" alt="clients" /><span>John Gruber</span></li>
-              <li><img src="{{{ URL::to('public/img/clients/8.jpg') }}}" alt="clients" /><span>Heidi N. Moore</span></li>
-              <li><img src="{{{ URL::to('public/img/clients/9.jpg') }}}" alt="clients" /><span>Carl Zimmer</span></li>
-              <li><img src="{{{ URL::to('public/img/clients/1.jpg') }}}" alt="clients" /><span>USA Today Sports</span></li>
-              <li><img src="{{{ URL::to('public/img/clients/2.jpg') }}}" alt="clients" /><span>Fast Company</span></li>
-              <li><img src="{{{ URL::to('public/img/clients/3.jpg') }}}" alt="clients" /><span>MG Siegler</span></li>
-              <li><img src="{{{ URL::to('public/img/clients/4.jpg') }}}" alt="clients" /><span>James Fallows</span></li>
-              <li><img src="{{{ URL::to('public/img/clients/5.jpg') }}}" alt="clients" /><span>Buzzfeed</span></li>
-              <li><img src="{{{ URL::to('public/img/clients/6.jpg') }}}" alt="clients" /><span>Amanda Hesser</span></li>
-              <li><img src="{{{ URL::to('public/img/clients/7.jpg') }}}" alt="clients" /><span>John Gruber</span></li>
-              <li><img src="{{{ URL::to('public/img/clients/8.jpg') }}}" alt="clients" /><span>Heidi N. Moore</span></li>
-              <li><img src="{{{ URL::to('public/img/clients/9.jpg') }}}" alt="clients" /><span>Carl Zimmer</span></li>
-              <li><img src="{{{ URL::to('public/img/clients/1.jpg') }}}" alt="clients" /><span>USA Today Sports</span></li>
-              <li><img src="{{{ URL::to('public/img/clients/2.jpg') }}}" alt="clients" /><span>Fast Company</span></li>
-              <li><img src="{{{ URL::to('public/img/clients/3.jpg') }}}" alt="clients" /><span>MG Siegler</span></li>
-              <li><img src="{{{ URL::to('public/img/clients/4.jpg') }}}" alt="clients" /><span>James Fallows</span></li>
+              <li><img src="{{{ URL::to('img/clients/1.jpg') }}}" alt="clients" /><span>USA Today Sports</span></li>
+              <li><img src="{{{ URL::to('img/clients/2.jpg') }}}" alt="clients" /><span>Fast Company</span></li>
+              <li><img src="{{{ URL::to('img/clients/3.jpg') }}}" alt="clients" /><span>MG Siegler</span></li>
+              <li><img src="{{{ URL::to('img/clients/4.jpg') }}}" alt="clients" /><span>James Fallows</span></li>
+              <li><img src="{{{ URL::to('img/clients/5.jpg') }}}" alt="clients" /><span>Buzzfeed</span></li>
+              <li><img src="{{{ URL::to('img/clients/6.jpg') }}}" alt="clients" /><span>Amanda Hesser</span></li>
+              <li><img src="{{{ URL::to('img/clients/7.jpg') }}}" alt="clients" /><span>John Gruber</span></li>
+              <li><img src="{{{ URL::to('img/clients/8.jpg') }}}" alt="clients" /><span>Heidi N. Moore</span></li>
+              <li><img src="{{{ URL::to('img/clients/9.jpg') }}}" alt="clients" /><span>Carl Zimmer</span></li>
+              <li><img src="{{{ URL::to('img/clients/1.jpg') }}}" alt="clients" /><span>USA Today Sports</span></li>
+              <li><img src="{{{ URL::to('img/clients/2.jpg') }}}" alt="clients" /><span>Fast Company</span></li>
+              <li><img src="{{{ URL::to('img/clients/3.jpg') }}}" alt="clients" /><span>MG Siegler</span></li>
+              <li><img src="{{{ URL::to('img/clients/4.jpg') }}}" alt="clients" /><span>James Fallows</span></li>
+              <li><img src="{{{ URL::to('img/clients/5.jpg') }}}" alt="clients" /><span>Buzzfeed</span></li>
+              <li><img src="{{{ URL::to('img/clients/6.jpg') }}}" alt="clients" /><span>Amanda Hesser</span></li>
+              <li><img src="{{{ URL::to('img/clients/7.jpg') }}}" alt="clients" /><span>John Gruber</span></li>
+              <li><img src="{{{ URL::to('img/clients/8.jpg') }}}" alt="clients" /><span>Heidi N. Moore</span></li>
+              <li><img src="{{{ URL::to('img/clients/9.jpg') }}}" alt="clients" /><span>Carl Zimmer</span></li>
+              <li><img src="{{{ URL::to('img/clients/1.jpg') }}}" alt="clients" /><span>USA Today Sports</span></li>
+              <li><img src="{{{ URL::to('img/clients/2.jpg') }}}" alt="clients" /><span>Fast Company</span></li>
+              <li><img src="{{{ URL::to('img/clients/3.jpg') }}}" alt="clients" /><span>MG Siegler</span></li>
+              <li><img src="{{{ URL::to('img/clients/4.jpg') }}}" alt="clients" /><span>James Fallows</span></li>
             </ul>
             <div style="clear:both;"></div>
             
@@ -189,24 +189,24 @@ jQuery(window).load(function() {
           <h3 class="left_out" class="sprited">
           Not a Member yet? <span><a href="membership">Register Here</a></span> <br/> <span><a href="forgotpassword">Forgot Password?</a></span>
           </h3>
-          <a id="close_x" class="close sprited" href="#"><img src="{{{ URL::to('public/img/u22.png') }}}" alt="close" borer="0" /></a>
+          <a id="close_x" class="close sprited" href="#"><img src="{{{ URL::to('img/u22.png') }}}" alt="close" borer="0" /></a>
           <hr />
           <h3 class="left_out" class="sprited">
             <strong>Login With</strong>
             <a href="#">
-              <img src="{{{ URL::to('public/img/google.png') }}}" alt="Social" style="margin-left:15px; position:relative; top:-5px; width:40px; height:40px;" onmouseover="this.src='{{{ URL::to('public/img/google_h.png') }}}'" onmouseout="this.src='{{{ URL::to('public/img/google.png') }}}'" />
+              <img src="{{{ URL::to('img/google.png') }}}" alt="Social" style="margin-left:15px; position:relative; top:-5px; width:40px; height:40px;" onmouseover="this.src='{{{ URL::to('img/google_h.png') }}}'" onmouseout="this.src='{{{ URL::to('img/google.png') }}}'" />
             </a>
             
             <a href="#">
-              <img src="{{{ URL::to('public/img/linkedin.png') }}}" alt="Social" style="margin-left:15px; position:relative; top:-5px; width:40px; height:40px;" onmouseover="this.src='{{{ URL::to('public/img/linkedin_h.png') }}}'" onmouseout="this.src='{{{ URL::to('public/img/linkedin.png') }}}'" />
+              <img src="{{{ URL::to('img/linkedin.png') }}}" alt="Social" style="margin-left:15px; position:relative; top:-5px; width:40px; height:40px;" onmouseover="this.src='{{{ URL::to('img/linkedin_h.png') }}}'" onmouseout="this.src='{{{ URL::to('img/linkedin.png') }}}'" />
             </a>
             
             <a href="#">
-              <img src="{{{ URL::to('public/img/twitte.png') }}}" alt="Social" style="margin-left:15px; position:relative; top:-5px; width:40px; height:40px;" onmouseover="this.src='{{{ URL::to('public/img/twitter_h.png') }}}'" onmouseout="this.src='{{{ URL::to('public/img/twitte.png') }}}'" />
+              <img src="{{{ URL::to('img/twitte.png') }}}" alt="Social" style="margin-left:15px; position:relative; top:-5px; width:40px; height:40px;" onmouseover="this.src='{{{ URL::to('img/twitter_h.png') }}}'" onmouseout="this.src='{{{ URL::to('img/twitte.png') }}}'" />
             </a>
             
             <a href="#">
-              <img src="{{{ URL::to('public/img/facebook.png') }}}" alt="Social" style="margin-left:15px; position:relative; top:-5px; width:40px; height:40px;" onmouseover="this.src='{{{ URL::to('public/img/faceook_h.png') }}}'" onmouseout="this.src='{{{ URL::to('public/img/facebook.png') }}}'" />
+              <img src="{{{ URL::to('img/facebook.png') }}}" alt="Social" style="margin-left:15px; position:relative; top:-5px; width:40px; height:40px;" onmouseover="this.src='{{{ URL::to('img/faceook_h.png') }}}'" onmouseout="this.src='{{{ URL::to('img/facebook.png') }}}'" />
             </a>
           </h3>
         <!-- </form> -->

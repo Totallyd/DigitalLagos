@@ -6,7 +6,7 @@
 
 <div class='col-lg-4 col-lg-offset-4' style="border:1px solid #575452; background-color:#3DB0FC;color:#FFFFFF;margin-top: 10%;">
 
-    <h2> Admin Login <img height="34px" style="float:right;" src="{{{ URL::to('public/img/lock.png') }}}"></h2>
+    <h2> Admin Login <img height="34px" style="float:right;" src="{{{ URL::to('img/lock.png') }}}"></h2>
     
     <div style="border:1px solid;width:100%; margin-bottom:10px;"></div>
 
