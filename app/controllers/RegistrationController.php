@@ -2,21 +2,13 @@
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Validator;
 use App\Models;
-//use Input, Notification, Redirect, Sentry, Str, Auth, Session, Hash, Password, Lang;
-class RegistrationController extends BaseController {
 
-  /*
-  |--------------------------------------------------------------------------
-  | Default Home Controller
-  |--------------------------------------------------------------------------
-  |
-  | You may wish to use controllers instead of, or in addition to, Closure
-  | based routes. That's great! Here is an example controller method to
-  | get you started. To route to this controller, just add the route:
-  |
-  | Route::get('/', 'HomeController@showWelcome');
-  |
-  */
+/**
+ * TODO : Refactoring is required on all classes. A lot of coy pasting work with no sense.
+ *
+ * Class RegistrationController
+ */
+class RegistrationController extends BaseController {
 
   public function registration()
   { 

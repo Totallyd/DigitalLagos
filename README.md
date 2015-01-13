@@ -34,3 +34,9 @@
 - Ensure you update your /etc/host file to point the ip to homestead.app or what ever fits.
 - Make sure to copy the app/config/database.php to app/config/local/database.php and add the local database 
 connection information.
+
+### Notes / TODO
+
+- Prev developer haven't maintained migrations for the database which is a headache. 
+- Code doesn't follow SOLID principles 
+- No abstraction of interfaces present. 
