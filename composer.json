@@ -22,6 +22,9 @@
 			"app/tests/TestCase.php"
 		]
 	},
+	"psr-0": {
+	  "Dlagos": "app"
+	},
 	"scripts": {
 		"post-install-cmd": [
 			"php artisan clear-compiled",
