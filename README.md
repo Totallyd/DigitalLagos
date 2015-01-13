@@ -1,6 +1,6 @@
 #Setting up the development environment
 
- - The simplest way to setup the development environment is to download and configure (Homestead)[http://laravel.com/docs/4.2/homestead]
+ - The simplest way to setup the development environment is to download and configure [Homestead](http://laravel.com/docs/4.2/homestead)
  
  Below is how a sample yaml file looks in my local dev env.
  
