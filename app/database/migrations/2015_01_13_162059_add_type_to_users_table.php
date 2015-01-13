@@ -17,6 +17,7 @@ class AddTypeToUsersTable extends Migration {
 			$table->string('type');
 			$table->string('activation_code');
 			$table->integer('activated');
+			$table->string('status');
 		});
 	}
 
