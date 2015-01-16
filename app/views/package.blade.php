@@ -1,134 +1,91 @@
 @extends('layouts.front-master')
 
-@section('title') Digital Lagos TV @stop
+@section('title') Digital Lagos.Tv:: Get Listed @stop
 
 @section('content')
   
-  <div class="container-fluid">
-    <div class="container content">
-     
-      <div class="row-fluid spader_2">
-
-        <div class="span12">
-          
-          <div class="about user">
-            <h2>Get Listed</h2>
-              <p>Get listed in Digital Lagos and showcase your business to key local, regional and national audiences.<br/>
-                Choose one of our listings packages and build your profile.</p>
-          </div>
-              <!-- <div class="row-fluid formrow">
-                <div style="background-color:#666; color:white;padding:20px 20px; text-align:center; font-size:14pt" class="span4">Current Membership</div>
-                <div class="span4"></div>
-                <div style="background-color:#ff6634; color:white;padding:20px 20px; text-align:center; font-size:14pt" class="span4">Recommended for you</div>
-              </div> -->
-
-             <!--  <div class="row-fluid formrow">
-                <div class="span4 package_heading"><h3>Basic<br><span class="organe_font">Free</span></h3></div>
-                <div class="span4 package_heading"><h3>Introductory<br><span class="organe_font">&pound;280 / year</span></h3></div>
-                <div class="span4 package_heading"><h3>Enhanced<br><span class="organe_font">&pound;750 / year</span></h3></div>
-              </div> -->
-               <!-- <div class="row-fluid formrow">
-                <div class="span4 package_heading"><h3>Basic<br><span class="organe_font">Free</span></h3></div>
-                <div class="span4 package_heading"><h3>Introductory<br><span class="organe_font">&pound;280 / year</span></h3></div>
-                <div class="span4 package_heading"><h3>Enhanced<br><span class="organe_font">&pound;750 / year</span></h3></div>
-              </div> -->
-
-            <div class="row-fluid formrow">
-              <div class="span4 about user">
-                <h2 class="package_heading">Basic<br><span class="gray_font">Free</span></h2>
-                  <ul class="package_list_style">
-                    <li><span>List basic profile.</span></span></li>
-                    <li><span>Appear in search result</span></li>
-                    <li><span>Feature basic details <br/><i>company information, Include phone number & fax number</i></span></li>
-                    <li><span>Display your web address</span></li>
-                  </ul>
-                  <br/>
-                  <div class="span12 profilearea">
-                      <a class="btn btn-lg btn-success" href="registration">Select</a> 
-                  </div>
-              </div>
-
-              <div class="span4 about user">
-                <h2 class="package_heading">Introductory<br><span class="gray_font">&pound;280 / year</span></h2>
-                  <ul class="package_list_style">
-                    <li><span>Build an introductory profile.</span></li>
-                    <li><span>List basic company information</span></li>
-                    <li><span>Company Logo</span></li>
-                    <li><span>Appear in 2 category search</span></li>
-                    <li><span>Contact details</span></li>
-                    <li><span>Website & Key contacts</span></li>
-                    <li><span>Searchable text and unlimited credit</span></li>
-                    <li><span>When visitors click on the company logo, they are diverted to your product/service</span></li>
-                  </ul>
-                  <br/>
-                  <div class="span12 profilearea">
-                      <a class="btn btn-lg btn-success" href="registration">Select</a> 
-                  </div>
-              </div>
-
-              <div class="span4 about user">
-                <h2 class="package_heading">Enhanced<br><span class="gray_font">&pound;750 / year</span></h2>
-                  <ul class="package_list_style" id="pacakage_list">
-                    <li><span>List a comprehensive profile</span></li>
-                    <li><span>Include name, address</span></li>
-                    <li><span>Phone number</span></li>
-                    <li><span>Link to company URL or Product details</span></li>
-                    <li><span>Case studies</span></li>
-                    <li><span>Add your latest news</span></li>
-                    <li><span>Company logo & message</span></li>
-                    <li><span>Appear in highest search results</span></li>
-                    <li><span>Features in 3 category search</span></li>
-                    <li><span>Features 300 words of searchable text</span></li>
-                    <li><span>When visitors click on the company logo, they are diverted to your product/service</span></li>
-                    <li><span>Add up to 20 showreel</span></li>
-                  </ul>
-                  <br/>
-                  <div class="span12 profilearea">
-                      <a class="btn btn-lg btn-success" href="registration">Select</a> 
-                  </div>
-              </div>
-
-</div>
-              <!-- <div class="row-fluid formrow">
-                <div class="span4">
-                  <p>
-                    > List a comprehensive profile
-                    <br/>
-                    Include name, address
-                    <br/>
-                    Phone number
-                    <br/>
-                    > Link to company URL or 
-                    <br/>
-                    Product details
-                    <br/>
-                    > Case studies
-                    <br/>
-                    > Add your latest news
-                    <br/>
-                    > Company logo & message
-                    <br/>
-                    > Appear in highest search results
-                    <br/>
-                    > Features in 3 category search
-                    <br/>
-                    > Features 300 words of searchable text
-                    <br/>
-                    > When visitors click on the company logo, they are diverted to your product/service
-                    <br/>
-                    > Add up to 20 showreel
-                  </p>
-                  <div class="row-fluid formrow">
-                    <div class="span12 profilearea">
-                      <a class="btn btn-lg btn-success" href="registration">Select</a> 
-                    </div>
-                  </div>
+  <section id="content" role="main" class="content-wrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="row">
+                    <article class="col-md-12 intro">
+                        <div class="box">
+                            <header>
+                                <h1>Get Listed</h1>
+                            </header>
+                            <section class="cont-wrap">
+                                <p>Get listed in Digital Lagos and showcase your business to key local, regional and national audiences. Choose one of our listings packages and build your profile.</p>
+                            </section>
+                        </div>
+                    </article>
                 </div>
-              </div> -->
-          
+                <div class="row plan">
+                    <div class="col-md-4">
+                        <div class="box">
+                            <header>
+                                <h2>Basic</h2>
+                                <h3>Free</h3>
+                            </header>
+                            <article class="column">
+                                <ul class="plan-list">
+                                    <li>List basic profile.</li>
+                                    <li>Appear in search result</li>
+                                    <li>Feature basic details</li>
+                                    <li>Display your web address</li>
+                                </ul><a href="{{{ URL::to('registration') }}}" class="btn dl-btn cta-btn">Select</a>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="box">
+                            <header>
+                                <h2>Introductory</h2>
+                                <h3>&pound; 280 &frasl; year</h3>
+                            </header>
+                            <article class="column">
+                                <ul class="plan-list">
+                                    <li>Build an introductory profile.</li>
+                                    <li>List basic company information</li>
+                                    <li>Company Logo</li>
+                                    <li>Appear in 2 category search</li>
+                                    <li>Contact details</li>
+                                    <li>Website &amp; Key contacts</li>
+                                    <li>Searchable text and unlimited credit</li>
+                                    <li>When visitors click on the company logo, they are diverted to your product/service</li>
+                                </ul><a href="#" class="btn dl-btn cta-btn">Select</a>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="box">
+                            <header>
+                                <h2>Enhanced</h2>
+                                <h3>&pound; 750 &frasl; year</h3>
+                            </header>
+                            <article class="column">
+                                <ul class="plan-list">
+                                    <li>List a comprehensive profile</li>
+                                    <li>Include name, address</li>
+                                    <li>Phone number</li>
+                                    <li>Link to company URL or Product details</li>
+                                    <li>Case studies</li>
+                                    <li>Add your latest news</li>
+                                    <li>Company logo &amp; message</li>
+                                    <li>Appear in highest search results</li>
+                                    <li>Features in 3 category search</li>
+                                    <li>Features 300 words of searchable text</li>
+                                    <li>When visitors click on the company logo, they are diverted to your product/service</li>
+                                    <li>Add up to 20 showreel</li>
+                                </ul><a href="#" class="btn dl-btn cta-btn">Select</a>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @include('includes.sidebar')
         </div>
-      </div>
     </div>
-  </div>
+</section>
   
   @stop

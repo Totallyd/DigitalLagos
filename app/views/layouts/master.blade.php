@@ -13,8 +13,9 @@
         {{ HTML::style('//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css') }} -->
         {{ HTML::style(asset('css/bootstrap.css')) }}
         <!-- {{ HTML::style(asset('css/bootstrap.min.css')) }} -->
-        {{ HTML::style(asset('css/style.css')) }}
         {{ HTML::style(asset('css/jquery-ui-1.10.4.custom.min.css')) }}
+
+        {{ HTML::style(asset('css/style.css')) }}
 
         <style>
         @section('styles')
@@ -63,7 +64,7 @@
                 </div>
             </div>
         </div> 
-
+<br/>
         <!-- Container -->
         <div class="container">
         @if(Auth::check())
@@ -101,57 +102,48 @@
                     <div class="col-sm-2 col_border_line">
                         
                         <ul id="nav">
-                            <li> <a href="{{{ URL::to('admin/dashboard') }}}">Dashboard</a></li>
-                            <li> <a href="{{{ URL::to('#') }}}">Manage Sub-Admin</a>
+                            <li> <a href="{{{ URL::to('admin/managesubadmin') }}}">Manage Sub-Admin</a>
                                 <ul>
-                                    <li><a href="{{{ URL::to('#') }}}">Add Sub-Admin</a>
-                                    <li><a href="{{{ URL::to('#') }}}">Edit Sub-Admin</a>
-                                    <li><a href="{{{ URL::to('#') }}}">View Sub-Admin</a>
+                                    <li><a href="{{{ URL::to('admin/addsubadmin') }}}">Add Sub-Admin</a>
                                 </ul>
                             </li>
                             <li> <a href="{{{ URL::to('#') }}}">Manage Members</a>
                                 <ul>
                                     <li><a href="{{{ URL::to('#') }}}">Edit Member</a>
                                     <li><a href="{{{ URL::to('#') }}}">View Member</a>
+                                    <li><a href="{{{ URL::to('#') }}}">Change Password</a>
                                 </ul>
                             </li>
-                            <li> <a href="{{{ URL::to('#') }}}">Manage Listing</a>
+                            <li> <a href="{{{ URL::to('#') }}}">Manage Listings</a>
                                 <ul>
+                                    <li><a href="{{{ URL::to('#') }}}">View Listing</a>
                                     <li><a href="{{{ URL::to('#') }}}">Edit Listing</a>
+                                    <li><a href="{{{ URL::to('#') }}}">Search Listing</a>
+                                    <li><a href="{{{ URL::to('#') }}}">Delete Listing</a>
+                                    <li><a href="{{{ URL::to('#') }}}">Publish Listing</a>
                                 </ul>
                             </li>
-                            <li> <a href="{{{ URL::to('#') }}}">Manage Testimonials</a>
+                            <li> <a href="{{{ URL::to('#') }}}">Manage News</a>
                                 <ul>
-                                    <li><a href="{{{ URL::to('#') }}}">Add Testimonial</a>
-                                    <li><a href="{{{ URL::to('#') }}}">Edit Testimonial</a>
-                                    <li><a href="{{{ URL::to('#') }}}">View Testimonial</a>
+                                    <li><a href="{{{ URL::to('#') }}}">Add News</a>
+                                    <li><a href="{{{ URL::to('#') }}}">Edit News</a>
+                                    <li><a href="{{{ URL::to('#') }}}">Delete News</a>
+                                    <li><a href="{{{ URL::to('#') }}}">Publish News</a>
                                 </ul>
                             </li>
-                            <li> <a href="{{{ URL::to('#') }}}">Manage Blog</a>
+                            <li> <a href="{{{ URL::to('#') }}}">Manage Events</a>
                                 <ul>
-                                    <li><a href="{{{ URL::to('#') }}}">Add Blog</a>
-                                    <li><a href="{{{ URL::to('#') }}}">Edit Blog</a>
-                                    <li><a href="{{{ URL::to('#') }}}">View Blog</a>
-                                </ul>
-                            </li>
-                            <li> <a href="{{{ URL::to('#') }}}">Manage Content</a>
-                                <ul>
-                                    <li><a href="{{{ URL::to('#') }}}">Add Page</a>
-                                    <li><a href="{{{ URL::to('#') }}}">Edit Page</a>
+                                    <li><a href="{{{ URL::to('#') }}}">Add Event</a>
+                                    <li><a href="{{{ URL::to('#') }}}">Edit Event</a>
+                                    <li><a href="{{{ URL::to('#') }}}">Delete Event</a>
+                                    <li><a href="{{{ URL::to('#') }}}">Publish Event</a>
                                 </ul>
                             </li>
                             <li> <a href="{{{ URL::to('#') }}}">Manage FAQ</a>
                                 <ul>
                                     <li><a href="{{{ URL::to('#') }}}">Add FAQ</a>
                                     <li><a href="{{{ URL::to('#') }}}">Edit FAQ</a>
-                                    <li><a href="{{{ URL::to('#') }}}">View FAQ</a>
-                                </ul>
-                            </li>
-                            <li> <a href="{{{ URL::to('#') }}}">Manage Help</a>
-                                <ul>
-                                    <li><a href="{{{ URL::to('#') }}}">Add Help</a>
-                                    <li><a href="{{{ URL::to('#') }}}">Edit Help</a>
-                                    <li><a href="{{{ URL::to('#') }}}">View Help</a>
+                                    <li><a href="{{{ URL::to('#') }}}">Delete FAQ</a>
                                 </ul>
                             </li>
                             <li> <a href="{{{ URL::to('#') }}}">Manage Email Templates</a>
@@ -165,14 +157,22 @@
                                 <ul>
                                     <li><a href="{{{ URL::to('#') }}}">Add Category</a>
                                     <li><a href="{{{ URL::to('#') }}}">Edit Category</a>
-                                    <li><a href="{{{ URL::to('#') }}}">View Category</a>
+                                    <li><a href="{{{ URL::to('#') }}}">Delete Category</a>
                                 </ul>
                             </li>
                             <li> <a href="{{{ URL::to('#') }}}">Manage Sub-Category</a>
                                 <ul>
                                     <li><a href="{{{ URL::to('#') }}}">Add Sub-Category</a>
                                     <li><a href="{{{ URL::to('#') }}}">Edit Sub-Category</a>
-                                    <li><a href="{{{ URL::to('#') }}}">View Sub-Category</a>
+                                    <li><a href="{{{ URL::to('#') }}}">Delete Sub-Category</a>
+                                </ul>
+                            </li>
+                            <li> <a href="{{{ URL::to('#') }}}">Manage Media Gallery</a>
+                                <ul>
+                                    <li><a href="{{{ URL::to('#') }}}">Add Media</a>
+                                    <li><a href="{{{ URL::to('#') }}}">Edit Media</a>
+                                    <li><a href="{{{ URL::to('#') }}}">View Media</a>
+                                    <li><a href="{{{ URL::to('#') }}}">Delete Media</a>
                                 </ul>
                             </li>
                             <li> <a href="{{{ URL::to('#') }}}">Manage Banner</a>
@@ -180,18 +180,23 @@
                                     <li><a href="{{{ URL::to('#') }}}">Add Banner</a>
                                     <li><a href="{{{ URL::to('#') }}}">Edit Banner</a>
                                     <li><a href="{{{ URL::to('#') }}}">View Banner</a>
+                                    <li><a href="{{{ URL::to('#') }}}">Delete Banner</a>
                                 </ul>
                             </li>
-                            <li> <a href="{{{ URL::to('#') }}}">Manage Setting</a></li>
-                            <li> <a href="{{{ URL::to('#') }}}">Manage Payment</a>
+                            <li> <a href="{{{ URL::to('#') }}}">Manage Setting</a>
                                 <ul>
-                                        <li><a href="{{{ URL::to('#') }}}">View Payment</a>
+                                    <li><a href="{{{ URL::to('#') }}}">Change Password</a>
+                                    <li><a href="{{{ URL::to('#') }}}">Change Email</a>
+                                    <li><a href="{{{ URL::to('#') }}}">Social Media</a>
+                                    <li><a href="{{{ URL::to('#') }}}">Payment Setting</a>
                                 </ul>
                             </li>
-                            <li> <a href="{{{ URL::to('#') }}}">Manage Contacts</a>
+                            <li> <a href="{{{ URL::to('#') }}}">Manage Jobs</a>
                                 <ul>
-                                        <li><a href="{{{ URL::to('#') }}}">View Contact</a>
-                                        <li><a href="{{{ URL::to('#') }}}">Reply Contact</a>
+                                    <li><a href="{{{ URL::to('#') }}}">Add Job</a>
+                                    <li><a href="{{{ URL::to('#') }}}">View Job</a>
+                                    <li><a href="{{{ URL::to('#') }}}">Search/Browse Job</a>
+                                    <li><a href="{{{ URL::to('#') }}}">Delete Job</a>
                                 </ul>
                             </li>
                         </ul>

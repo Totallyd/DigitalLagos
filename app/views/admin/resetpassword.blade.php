@@ -4,11 +4,15 @@
 
 @section('content')
 
-<div class='col-lg-4 col-lg-offset-4' style="border:1px solid #575452; background-color:#3DB0FC;color:#FFFFFF;margin-top: 10%;">
+<div class='col-lg-4 center-block login-box'>
 
-    <h2> Reset Password </h2>
-    
-    <div style="border:1px solid;width:100%; margin-bottom:10px;"></div>
+    <div class="row">
+        <div class="col-lg-12 col-vertical-align">
+            <h3> Reset Password </h3>
+        </div>
+    </div>
+
+    <div class="line-separator"></div>
 
     {{ Form::open() }}
 
@@ -16,44 +20,57 @@
       <div class='bg-danger alert'>{{ Session::get("error") }}</div>
     @endif
 
-    <div class='form-group'>
-        <div style="float:left;">
-            {{ Form::label('email', 'Email') }}
-        </div>
-        <div style="float:left;">
-            {{ Form::text('email',  null, ['placeholder' => 'Enter your Email', 'class' => 'form-control']) }}
-            {{ $errors->first("email") }}<br />
-        </div>
-    </div>
-
-    <div class='form-group'>
-        <div style="float:left;">
-            {{ Form::label('password', 'Password') }}
-        </div>
-        <div style="float:left;">
-            {{ Form::password('password', ['placeholder' => 'Enter new Password', 'class' => 'form-control']) }}
-            {{ $errors->first("password") }}<br />
+    <div class="row">
+        <div class='form-group'>
+            <div class="col-lg-2">
+                {{ Form::label('email', 'Email') }}
+            </div>
+            <div class="col-lg-10">
+                {{ Form::text('email',  null, ['placeholder' => 'Enter your Email', 'class' => 'form-control']) }}
+                {{ $errors->first("email") }}<br />
+            </div>
         </div>
     </div>
 
-     <div class='form-group'>
-        <div style="float: left;">
-            {{ Form::label('password_confirmation', 'Confirm') }}
+    <div class="row">
+        <div class='form-group'>
+            <div class="col-lg-2">
+                {{ Form::label('password', 'Password') }}
+            </div>
+            <div class="col-lg-10">
+                {{ Form::password('password', ['placeholder' => 'Enter new Password', 'class' => 'form-control']) }}
+                {{ $errors->first("password") }}<br />
+            </div>
         </div>
-        <div style="float:left;">
-            {{ Form::password('password_confirmation',['placeholder' => 'Re-Enter new Password', 'class' => 'form-control']) }}
-            {{ $errors->first("password_confirmation") }}<br />
+    </div>
+
+    <div class="row">
+        <div class='form-group'>
+            <div class="col-lg-2">
+                {{ Form::label('password_confirmation', 'Confirm') }}
+            </div>
+            <div class="col-lg-10">
+                {{ Form::password('password_confirmation',['placeholder' => 'Re-Enter new Password', 'class' => 'form-control']) }}
+                {{ $errors->first("password_confirmation") }}<br />
+            </div>
         </div>
     </div>
     {{ Form::hidden('token', $token) }}
-    <div class='form-group'>
-        <div style="float: left;">
-            {{ Form::label('', '') }}
-        </div>
-        <div>
-            {{ Form::submit('Reset', ['class' => 'btn btn-primary btn-lg']) }}
+    
+
+    <div class="row">
+        <div class="form-group">
+          <div class="col-lg-2">
+          </div>
+            <div class="col-lg-10">
+              <div class="pull-left">
+                {{ Form::submit('Reset', ['class' => 'btn btn-primary btn-lg']) }}
+              </div>
+          </div>
         </div>
     </div>
+
+    <br/>
 
   {{ Form::close() }}
 

@@ -63,6 +63,19 @@ Route::get('admin/logout', function()
 Route::group(array('prefix' => 'admin'), function() {
     Route::any('resetpassword/{token}', 'admin\UserController@resetPassword');
 });
+Route::group(array('prefix' => 'admin', 'before' => 'auth'), function() {
+    Route::resource('managesubadmin', 'admin\MemberController@manageSubAdmin');
+});
+Route::group(array('prefix' => 'admin', 'before' => 'auth'), function() {
+    Route::resource('addsubadmin', 'admin\MemberController@addSubAdmin');
+});
+
+Route::group(array('prefix' => 'admin', 'before' => 'auth'), function() {
+    Route::resource('edit-subadmin/{id}', 'admin\MemberController@editSubAdmin');
+});
+Route::group(array('prefix' => 'admin', 'before' => 'auth'), function() {
+    Route::resource('delete-subadmin/{subadminId}', 'admin\MemberController@deleteSubAdmin');
+});
 // Route::any("/", [
 //   "as"   => "admin/login",
 //   "uses" => "UserController@index"

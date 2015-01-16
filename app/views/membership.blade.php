@@ -1,190 +1,171 @@
 @extends('layouts.front-master')
 
-@section('title') Digital Lagos TV @stop
+@section('title') Digital Lagos.Tv:: Get Started @stop
 
 @section('content')
-  
-  {{ HTML::style(asset('css/evoslider/css/default/reset.css')) }}
-  {{ HTML::style(asset('css/evoslider/css/evoslider.css')) }}
-  {{ HTML::style(asset('css/evoslider/css/default/default.css')) }}
-  
-  {{ HTML::script(asset('js/evoslider/js/jquery-1.7.1.min.js')) }}
-  {{ HTML::script(asset('js/evoslider/js/jquery.easing.1.3.js')) }}
-  {{ HTML::script(asset('js/evoslider/js/jquery.evoslider.lite-1.1.0.js')) }}
- <!--  // <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-  // <script type="text/javascript" src="js/jquery.evoslider.lite-1.1.0.js"></script> -->
-<style type="text/css">
-  .evoslider.default .evoText.overlay {
-    color: #3e3e3e;
-    font-family: Tahoma,Geneva,sans-serif;
-    font-size: 16px;
-    height: 90px;
-    left: 20px;
-    line-height: 20px;
-    margin-left: 378px;
-    margin-top: 0;
-    opacity: 0.9;
-    padding: 10px 20px;
-    top: 10px;
-    width: 275px;
-  }
-  </style>
 
-  <div class="container-fluid">
-    <div class="container content">
-     
-      <div class="row-fluid spader_2">
-
-        <div class="span12">
-          
-          <!-- Slider Starts -->
-
-          <div id="mySlider" class="evoslider default"> <!-- start evo slider -->
-
-    <dl>
-    
-      <dt>slide one</dt>
-      <!-- <dd>
-         slide one content          
-      </dd> -->
-      <dd data-src="{{{ URL::to('img/slide_1.jpg') }}}" data-text="overlay">
-        <img class="attachment-post-thumbnail wp-post-image" width="481" height="439" alt="slide_1" src="http://digitallagos.tv/wp-content/uploads/2013/11/slide_1.jpg">
-        <div class="evoText">
-          <h3>Collaborating </h3>
-          <p></p><p>Promoting business growth through the power of our collaboration, partnerships, mentoring and enterprise initiatives.</p>
-          <p></p>
+<section id="content" role="main" class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <article class="col-md-12 page-intro">
+                    <h1>Welcome to Digital Lagos.Tv!</h1>
+                    <h2>Create your profile and became a part of creative network!</h2>
+                </article>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="ac-banner">
+                        <ul id="dl-accordion">
+                            <li>
+                                <h3>Collaborating</h3>
+                                <div>
+                                    <div class="ac-cont">
+                                        <div class="ac-cont-l">
+                                            <img src="{{{ URL::to('liabilities/images/banner/collaborating.jpg') }}}">
+                                        </div>
+                                        <div class="ac-cont-r">
+                                            <h2>Collaborating</h2>
+                                            <p>Supporting business growth, through the strength of our collaboration, partnerships, mentoring and enterprise initiatives.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <h3>Connecting</h3>
+                                <div>
+                                    <div class="ac-cont">
+                                        <div class="ac-cont-l">
+                                            <img src="{{{ URL::to('liabilities/images/banner/connecting.jpg') }}}">
+                                        </div>
+                                        <div class="ac-cont-r">
+                                            <h2>Connecting</h2>
+                                            <ul>
+                                                <li>What’s next in digital &amp; technology? Exploring social technology changes disrupting the digital landscape</li>
+                                                <li>Helping entrepreneur explore how to grow your business</li>
+                                                <li>Helping to facilitate employment &amp; skills sharing within our membership and within our creative region and community.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <h3>Development &amp; Growth</h3>
+                                <div>
+                                    <div class="ac-cont">
+                                        <div class="ac-cont-l">
+                                            <img src="{{{ URL::to('liabilities/images/banner/developmentandgrowth.jpg') }}}">
+                                        </div>
+                                        <div class="ac-cont-r">
+                                            <h2>Development &amp; Growth</h2>
+                                            <ul>
+                                                <li>Build the profile of our members organisations and individuals engaging them within our local market at a national level, representing our sector and industry interest</li>
+                                                <li>Entrepreneurs explore how to fund and grow your business</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <h3>Skills Development</h3>
+                                <div>
+                                    <div class="ac-cont">
+                                        <div class="ac-cont-l">
+                                            <img src="{{{ URL::to('liabilities/images/banner/skillsdevelopment.jpg') }}}">
+                                        </div>
+                                        <div class="ac-cont-r">
+                                            <h2>Skills Development</h2>
+                                            <p>Develop the skills of our membership to help attract and retain talent, develop enterprise opportunities and strengthen the region talent base.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="row clearfix">
+                        <article class="col-md-12 intro">
+                            <div class="box">
+                                <header>
+                                    <h1>Why Join Digital Lagos</h1>
+                                </header>
+                                <section class="cont-wrap">
+                                    <p>There are many benifits to join Digital Lagos.tv:</p>
+                                </section>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="member-wrap">
+                        <div class="row">
+                            <article class="col-md-4">
+                                <div class="box column">
+                                    <header>
+                                        <h2 class="text">A showcase of your work</h2>
+                                    </header>
+                                    <p>Images Of your work and details Of your practice avai ab e on ine anmhere and anytime enabling poten ial clients to find you easily Our website has thousand Of visitor each year and this number is growing all the time.
+                                        We also register our website w th all the major search engine.</p>
+                                </div>
+                            </article>
+                            <article class="col-md-4">
+                                <div class="box column">
+                                    <header>
+                                        <h2 class="text">Your own web page</h2>
+                                    </header>
+                                    <p>You w Il have you own un que web ad- dress With your image and details and it can i dude Ii k to your own website if you have one All members are given excl Sive entry into the Digital LagoMv on ine directory search
+                                        engine</p>
+                                </div>
+                            </article>
+                            <article class="col-md-4">
+                                <div class="box column">
+                                    <header>
+                                        <h2 class="text">Cost effective</h2>
+                                    </header>
+                                    <p>It is free to join our website. All members are g ven exclusive entry nto the Digital Lagos_tv online directory search engine For a small fee you can submit details Of your organization to be ncluded as a featured directory
+                                        search engine listing This is much cheaper than developing you own website and carrying out your</p>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="row">
+                            <article class="col-md-4">
+                                <div class="box column">
+                                    <header>
+                                        <h2 class="text">Online registration</h2>
+                                    </header>
+                                    <p>Online registration and updating give you control Of your information present- ed on our website. In addition, we Will provide you With information on the number Of times you have been select- ed i search, how many
+                                        times your pro- file have been viewed by web visitors and how many opportnities you have</p>
+                                </div>
+                            </article>
+                            <article class="col-md-4">
+                                <div class="box column">
+                                    <header>
+                                        <h2 class="text">Contact service</h2>
+                                    </header>
+                                    <p>Visitors to our website tell us about the opportunities / projects and if you are selected by their creat search, we pass the details onto you. We do not charge any additional fee you may be interested. In</p>
+                                </div>
+                            </article>
+                            <article class="col-md-4">
+                                <div class="box column">
+                                    <header>
+                                        <h2 class="text">Continuous, national promotion to a wide audience</h2>
+                                    </header>
+                                    <p>We continue to secure press coverage in a Wide range Of consumer, business and creative media publications, _ We also take space at many major arts fairs and trade conferences throughout the year to promote creatives
+                                        and the ser- vices we Offer</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+                @include('includes.sidebar')
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <a href="{{{ URL::to('package') }}}"><button type="button" class="btn dl-btn cta-btn mar-t-1h">Join Now</button></a>
+                </div>
+            </div>
         </div>
-      </dd>
+    </section>
   
-      <dt>slide two</dt>
-      <dd>
-         slide two content        
-      </dd>
-  
-      <dt>slide three</dt>
-      <dd>          
-         slide three content     
-      </dd>
-  
-      <dt>slide four</dt>
-      <dd>        
-         slide four content       
-      </dd> 
-      
-      <dt>slide five</dt>
-      <dd>
-         slide five content       
-      </dd>
-        
-    </dl>
-
-</div> <!-- end evo slider -->
-
-<script type="text/javascript">
-            
-    $("#mySlider").evoSlider({
-        mode: "accordion",                  // Sets slider mode ("accordion", "slider", or "scroller")
-        width: 960,                         // The width of slider
-        height: 360,                        // The height of slider
-        slideSpace: 5,                      // The space between slides
-    
-        mouse: true,                        // Enables mousewheel scroll navigation
-        keyboard: true,                     // Enables keyboard navigation (left and right arrows)
-        speed: 500,                         // Slide transition speed in ms. (1s = 1000ms)
-        easing: "swing",                    // Defines the easing effect mode
-        loop: true,                         // Rotate slideshow
-    
-        autoplay: true,                     // Sets EvoSlider to play slideshow when initialized
-        interval: 5000,                     // Slideshow interval time in ms
-        pauseOnHover: true,                 // Pause slideshow if mouse over the slide
-        pauseOnClick: true,                 // Stop slideshow if playing
-        
-        directionNav: true,                 // Shows directional navigation when initialized
-        directionNavAutoHide: false,        // Shows directional navigation on hover and hide it when mouseout
-    
-        controlNav: true,                   // Enables control navigation
-        controlNavAutoHide: false           // Shows control navigation on mouseover and hide it when mouseout 
-    });                                
-    
-</script>
-
-          <!-- Slider Ends -->
-
-          <div class="about user">
-            <h2>Membership</h2>              
-              <div class="row-fluid formrow">
-                <div class="span12">
-                  <p>Digital Lagos welcome individuals members of organisation or agency. We are a dynamic industry led organisation and we aspire to be one of the largest high calibre creative networks in Nigeria. Our main focus is profiling, growth, regular events, and workshops.</p>
-                </div>
-              </div>
-          </div>
-
-          <div class="about user span4" style="margin-left:0px">
-            <h4>Why Join Digital Lagos.tv</h4>
-            <div class="row-fluid formrow">  
-                <div class="span12">
-                  <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio.</p>
-                </div>
-              </div>
-            </div>
-            <div class="about user span4" style="margin-left:23px">
-            <h4>A showcase of your work</h4>
-            <div class="row-fluid formrow">  
-                <div class="span12">
-                  <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio.</p>
-                </div>
-              </div>
-            </div>
-            <div class="about user span4" style="margin-left:23px">
-            <h4>Your own web page</h4>
-            <div class="row-fluid formrow">  
-                <div class="span12">
-                  <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio.</p>
-                </div>
-              </div>
-            </div>
-            <div class="about user span4" style="margin-left:0px">
-            <h4>Cost-effective</h4>
-            <div class="row-fluid formrow">  
-                <div class="span12">
-                  <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio.</p>
-                </div>
-              </div>
-            </div>
-            <div class="about user span4" style="margin-left:23px">
-            <h4>Online registration</h4>
-            <div class="row-fluid formrow">  
-                <div class="span12">
-                  <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio.</p>
-                </div>
-              </div>
-            </div>
-            <div class="about user span4" style="margin-left:23px">
-            <h4>Continuous, national promotion to a wide audience</h4>
-            <div class="row-fluid formrow">  
-                <div class="span12">
-                  <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.</p>
-                </div>
-              </div>
-            </div>
-
-
-            <div class="row-fluid formrow">
-                <div class="span12 profilearea">
-                 
-                </div>
-              </div>
-
-              <div class="row-fluid formrow">
-                <div class="span12 profilearea">
-                  <a class="btn btn-lg btn-success" href="package">Join Now</a> 
-                </div>
-              </div>
-          </div>
-          
-        </div>
-      </div>
-    </div>
-  </div>
   
   @stop

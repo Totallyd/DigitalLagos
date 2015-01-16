@@ -1,117 +1,56 @@
 @extends('layouts.front-master')
 
-@section('title') Digital Lagos TV @stop
+@section('title') Digital Lagos.Tv::Reset Password @stop
 
 @section('content')
   
-  <div class="container-fluid">
-    <div class="container content">
-     
-      <div class="row-fluid spader_2">
-
-        <div class="span12">
-          
-          <div class="about user">
-            <h2>Reset Password</h2>
-
-            @if (Session::get("error"))
-              <div class='bg-danger alert'>{{ Session::get("error") }}</div>
-            @endif
-            
-            <form action="" method="post" id="userdata">
-             <br/> 
-              <div class="row-fluid formrow">
-                <div class="span3">
-                  <label for="email">Email Address*</label>
+  <section id="content" role="main" class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="dl-form">
+                        {{ Form::open(array('url' => '', 'id'=>'dl-form', 'class'=>'form')) }}
+                        <!-- <form class="form" id="dl-form" method="" action=""> -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <header>
+                                        <h2>Reset Password</h2>
+                                    </header>
+                                    <article>
+                                        <div class="form-group">
+                                            <label for="email">Email Address <span class="required">*</span>
+                                            </label>
+                                            {{ Form::text('email',Input::old('email'), array('class'=>'form-control', 'id'=>'email', 'placeholder'=>'Enter your Email', 'required'=>"")) }}
+                                            <!-- <input type="email" class="form-control" id="email" name="email" required> -->
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="pwd">Password <span class="required">*</span>
+                                            </label>
+                                            {{ Form::password('password', array('class'=>'form-control', 'id'=>'pwd', 'placeholder'=>'Enter your Password', 'required'=>"")) }}
+                                            <!-- <input type="password" class="form-control" id="pwd" name="pwd" required> -->
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="c-pwd">Confirm Password <span class="required">*</span>
+                                            </label>
+                                            {{ Form::password('password_confirmation', array('class'=>'form-control', 'id'=>'c-pwd', 'placeholder'=>'Re-enter your Password', 'required'=>"")) }}
+                                            <!-- <input type="password" class="form-control" id="c-pwd" name="c-pwd" required> -->
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-btns">
+                                        <button type="submit" class="dl-btn">Submit</button>
+                                        <button type="button" class="dl-btn-s">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <div class="span9">
-                  <input type="text" id="email" name="email" value="" />
-                </div>
-              </div>
-
-               
-              <div class="row-fluid formrow">
-                <div class="span3">
-                  <label for="password"> Password*</label>
-                </div>
-                <div class="span9">
-                  <input type="password" id="password" name="password" value="" />
-                </div>
-              </div>
-              
-              <div class="row-fluid formrow">
-                <div class="span3">
-                  <label for="password_confirmation">Confirm Password*</label>
-                </div>
-                <div class="span9">
-                  <input type="password" id="password_confirmation" name="password_confirmation" value="" />
-                </div>
-              </div>  
-              
-              
-              <div class="row-fluid formrow">
-                <div class="span3 required_fields"></div>
-                <div class="span9 required_fields">
-                  * Required Fields
-                </div>
-              </div>  
-              
-              <div class="row-fluid formrow">
-                <div class="span3 required_fields"></div>
-                <div class="span9 required_fields">
-                  <button type="submit" class="btn btn-lg btn-success">Submit</button> 
-                  <button type="button" class="btn btn-lg btn-success">Cancel</button>
-                </div>
-              </div>
-                
-            </form>
-          </div>
-          
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-
-   <script type="text/javascript">
-  $(document).ready(function(){
-    $("#userdata").validate({
-      rules: {
-        email: {
-          required: true,
-          email: true
-        },
-        password: {
-          required: true,
-          minlength: 6
-        },
-        password_confirmation: {
-          required: true,
-          minlength: 6,
-          equalTo: "#password"
-        }
-      },
-      messages: {
-        email: {
-          required: "Please enter email address",
-          email: "Please enter a valid email address",
-        },
-        password: {
-          required: "Please enter a password",
-          minlength: "Your password must be at least 6 characters long"
-        },
-        password_confirmation: {
-          required: "Please re-enter password",
-          minlength: "Password must be at least 6 characters long",
-          equalTo: "Password doesn't match"
-        },      
-      },
-      tooltip_options: {
-        email: {trigger:'focus', placement:'right'},
-        password: {trigger:'focus', placement:'right'},
-        password_confirmation: {placement:'right'}
-      },
-    });
-  });
-  </script>
+    </section>
   
   @stop

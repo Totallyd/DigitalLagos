@@ -4,13 +4,19 @@
 
 @section('content')
 
-<div class='col-lg-4 col-lg-offset-4' style="border:1px solid #575452; background-color:#3DB0FC;color:#FFFFFF;margin-top: 10%;">
+<div class='col-lg-4 center-block login-box'>
 
-    <h2> Forgot Password </h2>
-    
-    <div style="border:1px solid;width:100%; margin-bottom:10px;"></div>
+    <div class="row">
+        <div class="col-lg-12 col-vertical-align">
+            <h3> Forgot Password </h3>
+        </div>
+    </div>
+
+    <div class="line-separator"></div>
 
     <div style="font-size:12pt">Please enter your email address to reset your password.</div>
+
+    <br/>
 
     {{ Form::open(['role' => 'form']) }}
 
@@ -21,24 +27,33 @@
       <div class='alert alert-success'>{{ Session::get("status") }}</div>
     @endif
 
-    <div class='form-group'>
-        <div style="float:left;">
-            {{ Form::label('email', 'Email') }}
-        </div>
-        <div style="float:left;">
-            {{ Form::text('email',  Input::old("email"), ['class' => 'form-control']) }}
-            {{ $errors->first("email") }}<br />
+
+    <div class="row">
+        <div class='form-group'>
+            <div class="col-lg-2">
+                {{ Form::label('email', 'Email') }}
+            </div>
+            <div class="col-lg-10">
+                {{ Form::text('email',  Input::old("email"), ['class' => 'form-control']) }}
+                {{ $errors->first("email") }}<br />
+            </div>
         </div>
     </div>
 
-    <div class='form-group'>
-        <div style="float: left;">
-            {{ Form::label('', '') }}
-        </div>
-        <div>
-            {{ Form::submit('Submit', ['class' => 'btn btn-primary btn-lg']) }}
+
+    <div class="row">
+        <div class="form-group">
+          <div class="col-lg-2">
+          </div>
+            <div class="col-lg-10">
+              <div class="pull-left">
+                {{ Form::submit('Submit', ['class' => 'btn btn-primary btn-lg']) }}
+              </div>
+          </div>
         </div>
     </div>
+
+    <br/>
 
   {{ Form::close() }}
 

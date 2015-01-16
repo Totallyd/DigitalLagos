@@ -15,7 +15,7 @@
       <div class="row-fluid spader_2">
         <div class="span3 profilearea">
           <div>{{{ ($userProfile->first_name. ' '. $userProfile->last_name) }}}</div>
-          <img src="{{{ URL::to ('img/avatar-member.png') }}}" alt="avatar" />
+          <img src="{{{ URL::to ('public/img/avatar-member.png') }}}" alt="avatar" />
           <a href="#" class="orrange">Change Photo</a>
           
           <a href="#" class="link_btn btn btn-lg btn-success">Create a Gallery</a>

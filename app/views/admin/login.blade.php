@@ -4,11 +4,18 @@
 
 @section('content')
 
-<div class='col-lg-4 col-lg-offset-4' style="border:1px solid #575452; background-color:#3DB0FC;color:#FFFFFF;margin-top: 10%;">
+<div class='col-lg-4 center-block login-box'>
 
-    <h2> Admin Login <img height="34px" style="float:right;" src="{{{ URL::to('img/lock.png') }}}"></h2>
-    
-    <div style="border:1px solid;width:100%; margin-bottom:10px;"></div>
+    <div class="row">
+        <div class="col-lg-11 col-vertical-align">
+            <h3> Admin Login </h3>
+        </div>
+        <div class="col-lg-1 col-vertical-align">
+            <img height="34px" src="{{{ URL::to('img/lock-transperant.png') }}}">
+        </div>
+    </div>
+
+    <div class="line-separator"></div>
 
     {{ Form::open(['role' => 'form']) }}
 
@@ -17,45 +24,46 @@
             <div class='bg-danger alert'>{{ $error }}</div>
         @endforeach
     @endif
-
-    <div class='form-group'>
-        <div style="float:left;">
-            {{ Form::label('username', 'Username') }}
-        </div>
-        <div style="float:left;">
-            {{ Form::text('username', null, ['placeholder' => 'Username', 'class' => 'form-control']) }}<br />
-        </div>
-    </div>
-
-    <div class='form-group'>
-         <div style="float:left;">
-            {{ Form::label('password', 'Password') }}
-        </div>
-        <div style="float:left;">
-            {{ Form::password('password', ['placeholder' => 'Password', 'class' => 'form-control']) }}<br />
+    <div class="row">
+        <div class='form-group'>
+            <div class="col-lg-2">
+                {{ Form::label('username', 'Username') }}
+            </div>
+            <div class="col-lg-10">
+                {{ Form::text('username', null, ['placeholder' => 'Username', 'class' => 'form-control']) }}<br />
+            </div>
         </div>
     </div>
 
-    <div class="form-group">
-        <div style="float:left;">
-            {{ Form::checkbox('rememberme', 'true') }}
-            {{ Form::label('rememberme', 'Remember Me!') }}
-        </div>
-        <div style="font-size:12pt;text-align:right;padding-right:10px">
-            <a style="color:#FC7905;" href="{{{URL::to('admin/forgotpassword')}}}">Forgot Password</a>
+    <div class="row">
+        <div class='form-group'>
+             <div class="col-lg-2">
+                {{ Form::label('password', 'Password') }}
+            </div>
+            <div class="col-lg-10">
+                {{ Form::password('password', ['placeholder' => 'Password', 'class' => 'form-control']) }}<br />
+            </div>
         </div>
     </div>
 
-    <br />
-
-    <div class='form-group'>
-        <div style="float: left;">
-            {{ Form::label('', '') }}
-        </div>
-        <div>
-            {{ Form::submit('Login', ['class' => 'btn btn-primary btn-lg']) }}
+    <div class="row">
+        <div class="form-group">
+          <div class="col-lg-2">
+          </div>
+            <div class="col-lg-5">
+              <div class="pull-left">
+                {{ Form::submit('Login', ['class' => 'btn btn-primary btn-lg']) }}
+              </div>
+          </div>
+            <div class="col-lg-5">
+              <div class="pull-right">
+                <a href="{{{URL::to('admin/forgotpassword')}}}" style="color:#fff;text-decoration: underline;">Forgot Password?</a>
+              </div>
+            </div>
         </div>
     </div>
+
+    <br/>
 
   {{ Form::close() }}
 
