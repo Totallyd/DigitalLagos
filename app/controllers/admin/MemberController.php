@@ -7,7 +7,7 @@ use App\Models;
 
 use Input, Notification, Redirect, Sentry, Str, Auth, Session, Hash, Password, Lang;
 
-class MemberController extends \BaseController
+class MemberControleer extends \BaseControleer
 {
     
     
@@ -66,9 +66,9 @@ class MemberController extends \BaseController
                 $userProfile->save();
                 
                 if ($user->id > 0) {
-                    $userRole = new \UserRoll;
-                        $rolls = Input::get('rolls');
-                    if (is_array($rolls)) {
+                    $userRole = new \UserRole;
+                        $roles = Input::get('roles');
+                    if (is_array($roles)) {
                     	$this->insertUserRole($user->id);
 					}
                     return Redirect::to('admin/managesubadmin')->withInput()->with('success', 'SubAdmin Created Successfully.');
@@ -88,12 +88,12 @@ class MemberController extends \BaseController
         $states    = array(  'WP-KL E'       );
         $cities    = array(           'Kuala Lumpur E'        );
         
-        $rolls = \Roll::all();
+        $roles = \Role::all();
         
-        //echo "<pre>";print_r($rolls);echo "</pre>";exit;
+        //echo "<pre>";print_r($roles);echo "</pre>";exit;
         
         return View::make('admin.member.add_subadmin', array(
-            'rolls' => $rolls,
+            'roles' => $roles,
             'countries' => $countries,
             'states' => $states,
             'cities' => $cities
@@ -127,10 +127,10 @@ class MemberController extends \BaseController
                 $userProfile->save();
                 
                 if ($id > 0) {
-                    $userRole = new \UserRoll;
+                    $userRole = new \UserRole;
                     
-                    $rolls = Input::get('rolls');
-                    if (is_array($rolls)) {
+                    $roles = Input::get('roles');
+                    if (is_array($roles)) {
                         \DB::table('user_roles')->where('user_id', '=', $user->id)->delete();
                        $this->insertUserRole($user->id);
                     }
@@ -161,15 +161,15 @@ class MemberController extends \BaseController
         $states    = array(   'WP-KL E'        );
         $cities    = array(       'Kuala Lumpur E'       );
         
-        $rolls = \Roll::all();
+        $roles = \Role::all();
         
-        //echo "<pre>";print_r($rolls);echo "</pre>";exit;
+        //echo "<pre>";print_r($roles);echo "</pre>";exit;
         
         return View::make('admin.member.edit_subadmin', array(
             'user' => $user,
             'userProfile' => $userProfile,
             'roleIds' => $roleIds,
-            'rolls' => $rolls,
+            'roles' => $roles,
             'countries' => $countries,
             'states' => $states,
             'cities' => $cities
@@ -207,21 +207,21 @@ class MemberController extends \BaseController
     }
 	
 	private function insertUserRole($userId){
-		$rolls = Input::get('rolls');
-		 $rollArr = array();
+		$roles = Input::get('roles');
+		 $roleArr = array();
                         
-                        foreach ($rolls as $role) {
+                        foreach ($roles as $role) {
                             
                             $rowArr = array(
                                 'role_id' => $role,
                                 'user_id' => $userId
                             );
                             
-                            array_push($rollArr, $rowArr);
+                            array_push($roleArr, $rowArr);
                             
                         }
                         
-                        \DB::table('user_roles')->insert($rollArr);
+                        \DB::table('user_roles')->insert($roleArr);
 	}
     
 }

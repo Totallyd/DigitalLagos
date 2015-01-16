@@ -3,10 +3,10 @@
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
-class Roll extends Eloquent {
+class UserRole extends Eloquent {
 
 
-	protected $table = 'rolls';
+	protected $table = 'user_roles';
 
 	protected $key = 'id';
 
