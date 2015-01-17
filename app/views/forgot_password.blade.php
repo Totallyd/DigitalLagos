@@ -4,17 +4,21 @@
 
 @section('content')
 
+@if(Session::get("error"))
+    <div class='bg-danger alert'>{{ Session::get("error") }}</div>
+@endif
+
 <section id="content" role="main" class="content-wrap">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="dl-form">
-                    {{ Form::open(array('url' => '', 'id'=>'dl-form', 'class'=>'form')) }}
+                    {{ Form::open(array('url' => '/forgotpassword', 'id'=>'dl-form', 'class'=>'form')) }}
                         <div class="row">
                             <div class="col-md-6">
                                 <header>
                                     <h2>Forgot Password</h2>
-                                </header>
+                                </header>   
                                 <article>
                                     <div class="form-group">
                                         <label for="email">Email Address <span class="required">*</span>

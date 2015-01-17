@@ -95,8 +95,11 @@ class HomeController extends BaseController {
 	  }
 	
 	public function forgotPassword(){
+    
+
     if ($this->isPostRequest()) {
 
+		
 		$credentials = [
 		'email'=>Input::get('email')
 		];
@@ -108,6 +111,7 @@ class HomeController extends BaseController {
 
 		if($validator->passes()){
 
+    		
     		// $user = User::whereEmail(Input::only('email'));
     		// //echo '<PRE>';print_r($user);exit;
 	    	// $userProfile = UserProfile::whereUserId($user->$id)->first();
@@ -119,9 +123,20 @@ class HomeController extends BaseController {
 	          $view->with(['redirect_route'  => 'resetpassword']);
 	       });
 
-          $response = $this->getPasswordRemindResponse();
-        
-          if ($this->isInvalidUser($response)) {
+           $response = $this->getPasswordRemindResponse();
+
+        	switch (Password::remind(Input::only('email')))
+    		{
+      			case Password::INVALID_USER:
+        			return Redirect::back()->with('error', Lang::get($response));
+
+      			case Password::REMINDER_SENT:
+        			return Redirect::back()->with('status', Lang::get($response));
+    		}
+
+
+         /* if ($this->isInvalidUser($response)) {
+            echo "invalid user "; exit ();
             return Redirect::back()
               ->withInput()
               ->with("error", Lang::get($response));
@@ -129,12 +144,15 @@ class HomeController extends BaseController {
         
           return Redirect::back()
             ->with("status", Lang::get($response));
+        	*/
         }else{
 	      	return Redirect::back()
 	          ->withInput()
 	          ->with("error", "Your email address is invalid");
-      	}
+      	}	
     }
+
+
 
     if(Auth::check()){
       return Redirect::to("member-home");
