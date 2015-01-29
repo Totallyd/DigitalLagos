@@ -21,6 +21,8 @@ class HomeController extends BaseController {
         //updated: prevents re-login.
         // $this->beforeFilter('guest', ['only' => ['getLogin']]);
         // $this->beforeFilter('auth', ['only' => ['getLogout']]);
+    	//echo Hash::make("abc123");
+
     }
 
 	public function index()
