@@ -7,7 +7,7 @@ use App\Models;
 
 use Input, Notification, Redirect, Sentry, Str, Auth, Session, Hash, Password, Lang;
 
-class MemberControleer extends \BaseControleer
+class MemberController extends \BaseController
 {
     
     
