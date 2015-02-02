@@ -2,6 +2,7 @@
 namespace admin;
 
 use Dlagos\Contracts\SubadminInterface;
+use Dlagos\Services\Validators\SubadminCreateValidator;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Validator;
 use App\Models;
@@ -238,11 +239,19 @@ class MemberController extends \BaseController
 
         $countries = \Config::get('static.countries');
 
+        $cities = [];
+
         return View::make('admin.member.add_subadmin', compact(
             'roles',
             'countries',
             'states',
             'cities'
         ));
+    }
+
+    // Post Subadmin post Create
+    public function postCreate()
+    {
+        $v = new SubadminCreateValidator();
     }
 }
