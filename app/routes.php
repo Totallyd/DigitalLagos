@@ -23,7 +23,11 @@ Route::get('/membership', 'HomeController@membership');
 Route::get('/package', 'HomeController@package');
 Route::any('/forgotpassword', 'HomeController@forgotpassword');
 Route::any('/resetpassword/{token}', 'HomeController@resetpassword');
-Route::any('/registration', 'RegistrationController@registration');
+
+Route::get('/registration', 'RegistrationController@getUserRegister');
+Route::post('/registration', 'RegistrationController@postUserRegister');
+
+
 Route::any('/email-check', 'RegistrationController@emailCheck');
 Route::get('/registration-welcome', 'RegistrationController@registrationWelcome');
 Route::get('/create-account', 'RegistrationController@createAccount');

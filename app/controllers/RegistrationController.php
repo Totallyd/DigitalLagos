@@ -1,77 +1,73 @@
 <?php
+use Dlagos\Contracts\ValidableInterface;
+use Dlagos\Services\Validators\UserCreateValidator;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Validator;
 use App\Models;
-//use Input, Notification, Redirect, Sentry, Str, Auth, Session, Hash, Password, Lang;
+use Dlagos\Contracts\UserInterface;
+
 class RegistrationController extends BaseController {
 
-  /*
-  |--------------------------------------------------------------------------
-  | Default Home Controller
-  |--------------------------------------------------------------------------
-  |
-  | You may wish to use controllers instead of, or in addition to, Closure
-  | based routes. That's great! Here is an example controller method to
-  | get you started. To route to this controller, just add the route:
-  |
-  | Route::get('/', 'HomeController@showWelcome');
-  |
-  */
+    /**
+     * @var UserInterface
+     */
+    private $userRepo;
+    /**
+     * @var ValidableInterface
+     */
+    private $validator;
 
-  public function registration()
-  { 
-    if ($this->isPostRequest()) {
-      $credentials = Input::only(
-          "email",
-          "password",
-          "password_confirmation"
-        );
+    /**
+     * @param UserInterface $userRepo
+     * @param ValidableInterface|UserCreateValidator $validator
+     */
+    public function __construct(UserInterface $userRepo, UserCreateValidator $validator)
+  {
 
-      $code = str_random(60);
+      $this->userRepo = $userRepo;
+      $this->validator = $validator;
+  }
 
-      $user = new User;
-      $user->email = Input::get('email');
-      $user->password = Hash::make(Input::get('password'));
-      $user->type = 'Member';
-      $user->status = '0';
-      $user->activation_code = $code;
-      $user->activated = '0'; 
-      $user->save();
-
-      // create new product and save it
-      $userProfile = new UserProfile;
-      $userProfile->first_name = Input::get('first_name');
-      $userProfile->last_name = Input::get('last_name');
-      $userProfile->role = Input::get('role');
-      $userProfile->job_title = Input::get('job_title');
-      $userProfile->mobile = Input::get('mobile');
-      $userProfile->phone = Input::get('phone');
-      $userProfile->address = Input::get('address');
-      $userProfile->city = Input::get('city');
-      $userProfile->state = Input::get('state');
-      $userProfile->user()->associate($user);
-      $userProfile->save();
-
-      if ($userProfile)
-        {
-            $data = array(
-                'name'     => Input::get('first_name').' '.Input::get('last_name'),
-                'clickUrl'  => URL::to('/') . '/confirm/' . $code
-            );
-            Mail::send('emails.member_registration', $data , function($message)
-            {
-                $message->to(Input::get('email'), Input::get('first_name'))->subject('Confirm Registration :: Digitall.Tv');
-            });
-
-            
-        }else{
-          return Redirect::route('registration')->with('homeError', 'There was a problem creating your account.');
-        }
-
-      return Redirect::to('registration-welcome');
-
+    /**
+     *   Get user registration form
+     */
+    public function getUserRegister()
+    {
+        return View::make('registration');
     }
-    return View::make('registration');
+    /**
+     *  Register new user
+     */
+    public function postUserRegister()
+  { 
+
+        if ($this->validator->with(Input::all())->passes()) {
+            // Validation passed.
+            dd('passed');
+        }else{
+            dd($this->validator->errors());
+        }
+//
+//      if ($userProfile)
+//        {
+//            $data = array(
+//                'name'     => Input::get('first_name').' '.Input::get('last_name'),
+//                'clickUrl'  => URL::to('/') . '/confirm/' . $code
+//            );
+//            Mail::send('emails.member_registration', $data , function($message)
+//            {
+//                $message->to(Input::get('email'), Input::get('first_name'))->subject('Confirm Registration :: Digitall.Tv');
+//            });
+//
+//
+//        }else{
+//          return Redirect::route('registration')->with('homeError', 'There was a problem creating your account.');
+//        }
+//
+//      return Redirect::to('registration-welcome');
+//
+//    }
+//
   }
 
   public function confirm($code){

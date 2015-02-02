@@ -2,9 +2,10 @@
 
 namespace Dlagos\Providers;
 
+use Dlagos\Repos\EloquentUserRepository;
 use Illuminate\Support\ServiceProvider;
 
-class DlagoServiceProvder extends ServiceProvider
+class DlagoServiceProvider extends ServiceProvider
 {
 
     /**
@@ -14,6 +15,9 @@ class DlagoServiceProvder extends ServiceProvider
      */
     public function register()
     {
-        // TODO: Implement register() method.
+        $app = $this->app;
+        $app->bind('Dlagos\Contracts\UserInterface', function($app){
+            return new EloquentUserRepository();
+        });
     }
 }
