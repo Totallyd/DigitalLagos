@@ -15,9 +15,10 @@ class DlagoServiceProvider extends ServiceProvider
      */
     public function register()
     {
+
         $app = $this->app;
-        $app->bind('Dlagos\Contracts\UserInterface', function($app){
-            return new EloquentUserRepository();
-        });
+
+        $app->bind('Dlagos\Contracts\UserInterface', 'Dlagos\Repos\EloquentUserRepository');
+        $app->bind('Dlagos\Contracts\SubadminInterface', 'Dlagos\Repos\EloquentSubadminRepository');
     }
 }

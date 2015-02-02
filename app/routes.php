@@ -80,7 +80,3 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth'), function() {
 Route::group(array('prefix' => 'admin', 'before' => 'auth'), function() {
     Route::resource('delete-subadmin/{subadminId}', 'admin\MemberController@deleteSubAdmin');
 });
-// Route::any("/", [
-//   "as"   => "admin/login",
-//   "uses" => "UserController@index"
-// ]);

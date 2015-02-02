@@ -14,4 +14,6 @@ interface UserInterface {
      */
     public function register($user_data);
 
+    public function getAllRoles();
+
 }

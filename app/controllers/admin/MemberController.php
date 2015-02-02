@@ -1,6 +1,7 @@
 <?php
 namespace admin;
 
+use Dlagos\Contracts\SubadminInterface;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Validator;
 use App\Models;
@@ -9,12 +10,15 @@ use Input, Notification, Redirect, Sentry, Str, Auth, Session, Hash, Password, L
 
 class MemberController extends \BaseController
 {
-    
-    
+
+    protected $subadmin;
+
+    public function __construct(SubadminInterface $subadmin)
+    {
+        $this->subadmin = $subadmin;
+    }
     /**
-     * Display a listing of the resource.
-     *
-     * @return Response
+     * OLD developer methods being refactored.
      */
     
     public function manageSubAdmin()
@@ -223,5 +227,22 @@ class MemberController extends \BaseController
                         
                         \DB::table('user_roles')->insert($roleArr);
 	}
-    
+
+
+
+    // Get Subadmin Create
+
+    public function getCreate()
+    {
+        $roles = $this->user->getAllRoles();
+
+        $countries = \Config::get('static.countries');
+
+        return View::make('admin.member.add_subadmin', compact(
+            'roles',
+            'countries',
+            'states',
+            'cities'
+        ));
+    }
 }

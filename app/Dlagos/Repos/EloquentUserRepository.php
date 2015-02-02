@@ -6,6 +6,12 @@ use Dlagos\Contracts\UserInterface;
 
 class EloquentUserRepository implements UserInterface
 {
+    protected $role;
+
+    public function __construct(Role $role)
+    {
+        $this->role = $role;
+    }
     /**
      * Register New User
      * @return mixed
@@ -38,4 +44,8 @@ class EloquentUserRepository implements UserInterface
         $userProfile->save();
     }
 
+    public function getAllRoles()
+    {
+        return $this->role->all();
+    }
 }
