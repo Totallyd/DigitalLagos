@@ -3,6 +3,7 @@
 namespace Dlagos\Repos;
 
 use Dlagos\Contracts\UserInterface;
+use Role;
 
 class EloquentUserRepository implements UserInterface
 {

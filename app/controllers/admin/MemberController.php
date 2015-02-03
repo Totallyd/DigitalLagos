@@ -2,6 +2,7 @@
 namespace admin;
 
 use Dlagos\Contracts\SubadminInterface;
+use Dlagos\Contracts\UserInterface;
 use Dlagos\Services\Validators\SubadminCreateValidator;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Validator;
@@ -14,9 +15,12 @@ class MemberController extends \BaseController
 
     protected $subadmin;
 
-    public function __construct(SubadminInterface $subadmin)
+    protected $user;
+
+    public function __construct(SubadminInterface $subadmin, UserInterface $user)
     {
         $this->subadmin = $subadmin;
+        $this->user = $user;
     }
     /**
      * OLD developer methods being refactored.
@@ -240,6 +244,8 @@ class MemberController extends \BaseController
         $countries = \Config::get('static.countries');
 
         $cities = [];
+
+        $states = [];
 
         return View::make('admin.member.add_subadmin', compact(
             'roles',
