@@ -1,6 +1,8 @@
 <?php namespace Dlagos\Services\Validators;
 
-abstract class Validator {
+use Illuminate\Validation\Factory;
+
+abstract class abstractValidator {
 
     /**
      * Validator

@@ -243,9 +243,9 @@ class MemberController extends \BaseController
 
         $countries = \Config::get('static.countries');
 
-        $cities = [];
+        $cities = ['A'];
 
-        $states = [];
+        $states = ['a'];
 
         return View::make('admin.member.add_subadmin', compact(
             'roles',
@@ -258,6 +258,12 @@ class MemberController extends \BaseController
     // Post Subadmin post Create
     public function postCreate()
     {
-        $v = new SubadminCreateValidator();
+        $validator = \App::make('Dlagos\Services\Validators\SubadminCreateValidator');
+
+        if ($validator->with(Input::all())->passes()) {
+            dd('validator passes');
+        }else{
+            dd($validator->errors());
+        }
     }
 }

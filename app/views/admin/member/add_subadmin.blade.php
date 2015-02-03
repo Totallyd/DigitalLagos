@@ -16,7 +16,7 @@
       </div>
   @endif
 
-  <form action="" method="post" id="userdata">
+  <form action="" method="POST" id="userdata">
     
     <br/>
 
@@ -218,7 +218,7 @@
               <div class="col-lg-10">
                   <?php if($roles){foreach ($roles as $role):  ?>
                       <div style="width:25%; float:left;">
-                        <input type="checkbox" name="rolls[]" value="<?php echo $role->id;?>" <?php if(is_array(Input::old('rolls'))){ 
+                        <input type="checkbox" name="roles[]" value="<?php echo $role->id;?>" <?php if(is_array(Input::old('roles'))){ 
                         if(in_array($role->id,Input::old('roles'))){?> checked="checked" <?php }}?>/>
                         &nbsp;<?php echo $role->title; ?></div>
                     <?php endforeach; } ?>

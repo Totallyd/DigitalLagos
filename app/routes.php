@@ -84,6 +84,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth'), function() {
 
 
     Route::get('addsubadmin', 'admin\MemberController@getCreate');
+    Route::post('addsubadmin', 'admin\MemberController@postCreate');
 
 
 });

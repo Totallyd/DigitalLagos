@@ -1,11 +1,19 @@
 <?php namespace Dlagos\Services\Validators;
 
-use abstractValidator;
 
 class SubadminCreateValidator extends abstractValidator
 {
 
-    protected $_rules = array(
-        'first_name' => 'required'
+    protected $rules = array(
+        'first_name' => 'required',
+        'last_name'  => 'required',
+        'username'   => 'required|unique:user,username',
+        'password'   => 'required|min:8',
+        'phone'      => 'required|numeric',
+        'mobile'     => 'required|numeric',
+        'country'    => 'required',
+        'state'      => 'required',
+        'city'       => 'required',
+        'roles'      => 'sometimes|required'
     );
 }
