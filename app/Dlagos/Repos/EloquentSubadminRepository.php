@@ -1,12 +1,14 @@
 <?php namespace Dlagos\Repos;
 
 use Dlagos\Contracts\SubadminInterface;
+use Illuminate\Support\Facades\Hash;
 use User;
 use UserProfile;
 
 class EloquentSubadminRepository implements SubadminInterface
 {
     /**
+     * TODO : Refactoring required.
      * @param $data
      * @return mixed
      */
@@ -40,6 +42,32 @@ class EloquentSubadminRepository implements SubadminInterface
         $profile->save();
 
         return $user;
+    }
+
+    /**
+     * TODO : Refactoring required.
+     * @param $data
+     * @param $id
+     */
+    public function update($data, $id)
+    {
+        $user = \User::findOrFail($id);
+
+        //sync roles
+        $user->role()->sync($data['roles']);
+
+        // Update User
+        $user->update($data);
+
+        // Update Profile
+        $user->profile->update($data);
+
+        // If password is being updated
+        if (isset($data['password'])) {
+            $user->password = Hash::make($data['password']);
+            $user->save();
+        }
+
     }
 
 }

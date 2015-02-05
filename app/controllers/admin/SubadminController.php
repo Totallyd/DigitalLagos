@@ -5,9 +5,13 @@ class SubadminController extends \BaseController
 {
     protected $user;
 
-    public function __construct(\Dlagos\Contracts\UserInterface $user)
+    protected $subadmin;
+
+    public function __construct(\Dlagos\Contracts\UserInterface $user, \Dlagos\Contracts\SubadminInterface $subadmin)
     {
         $this->user = $user;
+
+        $this->subadmin = $subadmin;
     }
 
     // Index View
@@ -59,7 +63,10 @@ class SubadminController extends \BaseController
         $userProfile = \UserProfile::where('user_id', $id)->first();
         $user = \User::find($id);
         $roles = $this->user->getAllRoles();
-        $roleIds = $user->role;
+        $roleIds = [];
+        foreach($user->role->toArray() as $r) {
+            $roleIds[] = $r['id'];
+        }
 
         $countries = \Config::get('static.countries');
 
@@ -78,8 +85,16 @@ class SubadminController extends \BaseController
         ));
     }
 
-    public function postEdit()
+    public function postEdit($id)
     {
+        try {
 
+            $this->subadmin->update(Input::all(), $id);
+
+            return Redirect::to('admin/addsubadmin')->withSuccess('Successfully Created Record.');
+
+        }catch (Exception $e) {
+            return Redirect::to('admin/addsubadmin')->withInput()->withError('Something unexpected happend. Please try again.');
+        }
     }
 }

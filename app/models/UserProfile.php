@@ -7,11 +7,12 @@ class UserProfile extends Eloquent
 
 	protected $key = 'id';
 
+	protected $fillable = array(
+		'first_name', 'last_name', 'mobile', 'phone', 'address', 'city', 'state'
+	);
+
 	public function user() {
 		return $this->belongsTo('User');
 	}
-
-
-	
 
 }

@@ -16,7 +16,7 @@
       </div>
   @endif
 
-  <form action="" method="post" id="userdata">
+  <form action="" method="POST" id="userdata">
     <br/>
     
     <input type="hidden" id="user_id" name="user_id" value="<?php echo $userProfile->user_id;?>" />
