@@ -3,7 +3,12 @@
 
 class SubadminController extends \BaseController
 {
+    protected $user;
 
+    public function __construct(\Dlagos\Contracts\UserInterface $user)
+    {
+        $this->user = $user;
+    }
     // Get Subadmin Create
     public function getCreate()
     {
