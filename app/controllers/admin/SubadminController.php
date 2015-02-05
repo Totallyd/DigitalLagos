@@ -9,6 +9,15 @@ class SubadminController extends \BaseController
     {
         $this->user = $user;
     }
+
+    // Index View
+    public function getIndex()
+    {
+        $users = $this->user->getAll();
+        return View::make('admin.member.manage_subadmin', array(
+            'users' => $users
+        ));
+    }
     // Get Subadmin Create
     public function getCreate()
     {

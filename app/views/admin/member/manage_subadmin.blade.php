@@ -12,7 +12,7 @@ Manage Sub Admin <div class="pull-right"><a href="{{{ URL::to('admin/addsubadmin
 @endif
 @section('content')
 <?php if(count($users)>0):?>
-<?php echo $users->links(); ?>
+<?php //echo $users->links(); ?>
   <table class="table">
         <thead>
             <tr>
@@ -24,15 +24,15 @@ Manage Sub Admin <div class="pull-right"><a href="{{{ URL::to('admin/addsubadmin
             </tr>
         </thead>
         <tbody>
-        <?php foreach ($allUsers as $user): ?>
+        <?php foreach ($users as $user): ?>
             <tr>
-                <th><input type="checkbox" name="id[]" value="<?php echo $user->user_id; ?>"></th>
-                <td><?php echo $user->first_name; ?></td>
+                <th><input type="checkbox" name="id[]" value="<?php echo $user->id; ?>"></th>
+                <td><?php echo $user->profile->first_name; ?></td>
                 <td><?php echo $user->email; ?></td>
-                <td><?php echo $user->phone; ?></td>
-                <td><a href="{{{ URL::to('admin/edit-subadmin/'.$user->user_id) }}}">Edit</a> | <a href="{{{ URL::to('admin/edit-subadmin/'.$user->user_id) }}}">View</a> | 
+                <td><?php echo $user->profile->phone; ?></td>
+                <td><a href="{{{ URL::to('admin/edit-subadmin/'.$user->id) }}}">Edit</a> | <a href="{{{ URL::to('admin/edit-subadmin/'.$user->user_id) }}}">View</a> |
                 
-                <a href="{{{ URL::to('admin/delete-subadmin/'.$user->user_id) }}}" onclick="return confirm('Are you sure?');">Delete</a></td>
+                <a href="{{{ URL::to('admin/delete-subadmin/'.$user->id) }}}" onclick="return confirm('Are you sure?');">Delete</a></td>
             </tr>
             <?php endforeach; ?>
           

@@ -4,14 +4,22 @@ namespace Dlagos\Repos;
 
 use Dlagos\Contracts\UserInterface;
 use Role;
+use User;
 
 class EloquentUserRepository implements UserInterface
 {
     protected $role;
 
-    public function __construct(Role $role)
+    protected $user;
+
+    /**
+     * @param Role $role
+     * @param User $user
+     */
+    public function __construct(Role $role, User $user)
     {
         $this->role = $role;
+        $this->user = $user;
     }
     /**
      * Register New User
@@ -48,5 +56,10 @@ class EloquentUserRepository implements UserInterface
     public function getAllRoles()
     {
         return $this->role->all();
+    }
+
+    public function getAll()
+    {
+        return $this->user->with('profile')->get();
     }
 }

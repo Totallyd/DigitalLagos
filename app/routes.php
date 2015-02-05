@@ -67,9 +67,9 @@ Route::get('admin/logout', function()
 Route::group(array('prefix' => 'admin'), function() {
     Route::any('resetpassword/{token}', 'admin\UserController@resetPassword');
 });
-Route::group(array('prefix' => 'admin', 'before' => 'auth'), function() {
-    Route::resource('managesubadmin', 'admin\MemberController@manageSubAdmin');
-});
+//Route::group(array('prefix' => 'admin', 'before' => 'auth'), function() {
+//    Route::resource('managesubadmin', 'admin\MemberController@manageSubAdmin');
+//});
 //
 //
 //Route::group(array('prefix' => 'admin', 'before' => 'auth'), function() {
@@ -82,7 +82,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth'), function() {
 
 Route::group(array('prefix' => 'admin', 'before' => 'auth'), function() {
 
-
+    Route::get('managesubadmin', 'SubadminController@getIndex');
     Route::get('addsubadmin', 'SubadminController@getCreate');
     Route::post('addsubadmin', 'SubadminController@postCreate');
 

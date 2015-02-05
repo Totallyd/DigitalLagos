@@ -15,7 +15,7 @@ class EloquentSubadminRepository implements SubadminInterface
 
         $user = new User();
         $user->username = $data['username'];
-        $user->password = $data['password'];
+        $user->password = Hash::make($data['password']);
         $user->email = $data['email'];
         $user->type = 'subadmin';
         $user->activation_code = '';
