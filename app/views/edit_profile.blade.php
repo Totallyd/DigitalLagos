@@ -70,34 +70,35 @@
                   <label for="roles">Select Roles*</label>
                 </div>
                 <div class="span9">
+                  
                   <select name="role" id="role">
                     <option value="">Please Chose Role*</option>
-                    <option value="2">Digital Entertainment</option>
-                    <option value="3">Broadcast Media</option>
-                    <option value="4">Content production</option>
-                    <option value="5">3D Game Animation</option>
-                    <option value="6">Motion graphics</option>
-                    <option value="7">Music, Video production/report</option>
-                    <option value="8">Publishing</option>
-                    <option value="9">Communications</option>
-                    <option value="10">Graphic Design</option>
-                    <option value="11">Web Design</option>
-                    <option value="12">Web Development</option>
-                    <option value="13">Multimedia Producer Creative</option>
-                    <option value="14">Advertising</option>
-                    <option value="15">Marketing PR</option>
-                    <option value="16">Sales/Marketing</option>
-                    <option value="17">Production co-ordinator</option>
-                    <option value="18">Artist management</option>
-                    <option value="19">Artist</option>
-                    <option value="20">Performing artist</option>
-                    <option value="21">Photography</option>
-                    <option value="22">Producer</option>
-                    <option value="23">Club /artist promotion</option>
-                    <option value="24">Film/video production</option>
-                    <option value="25">Music production</option>
-                    <option value="26">Student</option>
-                    <option value="27">Other</option>
+                    <option value="2" @if ($userProfile->role=='2') selected @endif >Digital Entertainment</option>
+                    <option value="3" @if ($userProfile->role=='3') selected @endif >Broadcast Media</option>
+                    <option value="4" @if ($userProfile->role=='4') selected @endif >Content production</option>
+                    <option value="5" @if ($userProfile->role=='5') selected @endif >3D Game Animation</option>
+                    <option value="6" @if ($userProfile->role=='6') selected @endif >Motion graphics</option>
+                    <option value="7" @if ($userProfile->role=='7') selected @endif >Music, Video production/report</option>
+                    <option value="8" @if ($userProfile->role=='8') selected @endif >Publishing</option>
+                    <option value="9" @if ($userProfile->role=='9') selected @endif >Communications</option>
+                    <option value="10" @if ($userProfile->role=='10') selected @endif >Graphic Design</option>
+                    <option value="11" @if ($userProfile->role=='11') selected @endif >Web Design</option>
+                    <option value="12" @if ($userProfile->role=='12') selected @endif >Web Development</option>
+                    <option value="13" @if ($userProfile->role=='13') selected @endif >Multimedia Producer Creative</option>
+                    <option value="14" @if ($userProfile->role=='14') selected @endif >Advertising</option>
+                    <option value="15" @if ($userProfile->role=='15') selected @endif >Marketing PR</option>
+                    <option value="16" @if ($userProfile->role=='16') selected @endif >Sales/Marketing</option>
+                    <option value="17" @if ($userProfile->role=='17') selected @endif >Production co-ordinator</option>
+                    <option value="18" @if ($userProfile->role=='18') selected @endif >Artist management</option>
+                    <option value="19" @if ($userProfile->role=='19') selected @endif >Artist</option>
+                    <option value="20" @if ($userProfile->role=='20') selected @endif >Performing artist</option>
+                    <option value="21" @if ($userProfile->role=='21') selected @endif>Photography</option>
+                    <option value="22" @if ($userProfile->role=='22') selected @endif>Producer</option>
+                    <option value="23" @if ($userProfile->role=='23') selected @endif>Club /artist promotion</option>
+                    <option value="24" @if ($userProfile->role=='24') selected @endif>Film/video production</option>
+                    <option value="25" @if ($userProfile->role=='25') selected @endif>Music production</option>
+                    <option value="26" @if ($userProfile->role=='26') selected @endif>Student</option>
+                    <option value="27" @if ($userProfile->role=='27') selected @endif>Other</option>
                   </select>
                 </div>
               </div>

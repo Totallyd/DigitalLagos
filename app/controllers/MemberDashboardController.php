@@ -45,10 +45,10 @@ class MemberDashboardController extends BaseController {
 
       // validate
       $rules = array(
-        'first_name'       => 'required',
-        'last_name'       => 'required',
-        'role'       => 'required',
-        'email'      => 'required|email'
+        'first_name' => 'required',
+        'last_name' => 'required',
+        'role' => 'required',
+        'email' => 'required|email'
       );
       $validator = Validator::make(Input::all(), $rules);
 
@@ -61,13 +61,30 @@ class MemberDashboardController extends BaseController {
         $user->email = Input::get('email');
         // if Password entered
         if(Input::get('old_password') && Input::get('password') && Input::get('password_confirmation') !=""){
-          // if(Hash::check(Input::get('old_password'), $user->password)){
-          //   $user->password = Hash::make(Input::get('password'));
-          // }
-          //   return Redirect::to('edit-profile/'.$id)->with('error', 'Your old password is wrong, please enter correct password');
-        }else{
-          return Redirect::to('edit-profile/'.$id)->with('error', 'Please enter your password');
+            // case  : olde password mismatch
+           if(Hash::check(Input::get('old_password'), $user->password)){
+                $user->password = Hash::make(Input::get('password'));
+           }else 
+           {
+             return Redirect::to('edit-profile/'.$id)->with('error', 'Your old password is wrong, please enter correct password');
+           }
+          // case : new password mismatch
+          if (Input::get('password') != Input::get('password_confirmation'))
+            {
+               return Redirect::to('edit-profile/'.$id)->with('error', 'Mismatch New Password Fields');
+            }
+        }else if (Input::get('old_password') =="" ) {
+              // password not mandatory 
+              return Redirect::to('edit-profile/'.$id)->with('error', 'Please enter your password');
+        }else if (Input::get('old_password') !="")
+        {
+          if (Input::get('password') != Input::get('password_confirmation'))
+           {
+             return Redirect::to('edit-profile/'.$id)->with('error', 'Mismatch New Password Fields');
+           }
         }
+        
+
         $user->save();
 
         $userProfile = UserProfile::whereUserId($id)->first();
