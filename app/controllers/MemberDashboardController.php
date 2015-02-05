@@ -54,7 +54,15 @@ class MemberDashboardController extends BaseController {
 
       // process the login
       if ($validator->fails()) {
-        return Redirect::to('edit-profile/'.$id)->with('error', 'Please enter the required fields marked as *.');
+           $messages = $validator->messages();
+            //  get email validation message 
+            if ( $messages->first('email') !="")
+            {
+              return Redirect::to('edit-profile/'.$id)->with('error', $messages->first('email'));
+            }else 
+            {
+              return Redirect::to('edit-profile/'.$id)->with('error', 'Please enter the required fields marked as *.');
+            }
       } else {
         // store
         $user = User::find($id);
