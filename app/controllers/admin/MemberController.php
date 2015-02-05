@@ -258,12 +258,16 @@ class MemberController extends \BaseController
     // Post Subadmin post Create
     public function postCreate()
     {
-        $validator = \App::make('Dlagos\Services\Validators\SubadminCreateValidator');
+        try {
+            $validator = \App::make('Dlagos\Services\Validators\SubadminCreateValidator');
 
-        if ($validator->with(Input::all())->passes()) {
-            dd('validator passes');
-        }else{
-            dd($validator->errors());
+            if ($validator->with(Input::all())->passes()) {
+                $this->subadmin->create(Input::all());
+            } else {
+                return Redirect::to('admin/addsubadmin')->withInput()->withErrors($validator->errors());
+            }
+        }catch (Exception $e) {
+            return Redirect::to('admin/addsubadmin')->withInput();
         }
     }
 }

@@ -1,5 +1,10 @@
 <?php namespace Dlagos\Contracts;
 
-interface SubadminInterface {
-
+interface SubadminInterface
+{
+    /**
+     * @param $data
+     * @return mixed
+     */
+    public function create($data);
 }
