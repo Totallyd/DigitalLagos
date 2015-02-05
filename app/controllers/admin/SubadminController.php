@@ -53,4 +53,33 @@ class SubadminController extends \BaseController
             return Redirect::to('admin/addsubadmin')->withInput();
         }
     }
+
+    public function getEdit($id)
+    {
+        $userProfile = \UserProfile::where('user_id', $id)->first();
+        $user = \User::find($id);
+        $roles = $this->user->getAllRoles();
+        $roleIds = $user->role;
+
+        $countries = \Config::get('static.countries');
+
+        $cities = ['A'];
+
+        $states = ['a'];
+
+        return View::make('admin.member.edit_subadmin', compact(
+            'roleIds',
+            'user',
+            'userProfile',
+            'roles',
+            'countries',
+            'states',
+            'cities'
+        ));
+    }
+
+    public function postEdit()
+    {
+
+    }
 }

@@ -218,14 +218,14 @@
     <div class="row">
         <div class='form-group'>
             <div class="col-lg-2">
-                {{ Form::label('rolls', 'Rolls') }}
+                {{ Form::label('roles', 'Roles') }}
             </div>
             <div class="col-lg-10">
-                <?php if($rolls){foreach ($rolls as $roll):  ?>
+                <?php if($roles){foreach ($roles as $role):  ?>
                   <div style="width:25%; float:left;">
-                    <input type="checkbox" name="rolls[]" value="<?php echo $roll->id;?>" <?php if(is_array($roleIds)){ 
-                    if(in_array($roll->id,$roleIds)){?> checked="checked" <?php }}?> />
-                    &nbsp;<?php echo $roll->title; ?>
+                    <input type="checkbox" name="roles[]" value="<?php echo $role->id;?>" <?php if(is_array($roleIds)){ 
+                    if(in_array($role->id,$roleIds)){?> checked="checked" <?php }}?> />
+                    &nbsp;<?php echo $role->title; ?>
                   </div>
                 <?php endforeach; } ?>
             </div>
