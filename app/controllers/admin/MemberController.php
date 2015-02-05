@@ -263,6 +263,7 @@ class MemberController extends \BaseController
 
             if ($validator->with(Input::all())->passes()) {
                 $this->subadmin->create(Input::all());
+                return Redirect::to('admin/addsubadmin')->withSuccess('Successfully Created Record.');
             } else {
                 return Redirect::to('admin/addsubadmin')->withInput()->withErrors($validator->errors());
             }

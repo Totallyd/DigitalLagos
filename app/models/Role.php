@@ -10,6 +10,8 @@ class Role extends Eloquent {
 
 	protected $key = 'id';
 
-	
-
+	public function user()
+	{
+		return $this->belongsToMany('User', 'user_roles');
+	}
 }

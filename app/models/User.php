@@ -5,27 +5,13 @@ use Illuminate\Auth\Reminders\RemindableInterface;
 
 class User extends Eloquent implements UserInterface, RemindableInterface {
 
-	/**
-	 * The database table used by the model.
-	 *
-	 * @var string
-	 */
 	protected $table = 'user';
 
 	protected $key = 'id';
 
-	/**
-	 * The attributes excluded from the model's JSON form.
-	 *
-	 * @var array
-	 */
 	protected $hidden = array('password');
 
-	/**
-	 * Get the unique identifier for the user.
-	 *
-	 * @return mixed
-	 */
+
 	public function getAuthIdentifier()
 	{
 		return $this->getKey();
@@ -62,30 +48,23 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		$this->remember_token = $value;
 	}
 
-	/**
-	 * Get the column name for the "remember me" token.
-	 *
-	 * @return string
-	 */
 	public function getRememberTokenName()
 	{
 		return 'remember_token';
 	}
 
-	/**
-	 * Get the e-mail address where password reminders are sent.
-	 *
-	 * @return string
-	 */
 	public function getReminderEmail()
 	{
 		return $this->email;
 	}
 
-	// DEFINE RELATIONSHIPS --------------------------------------------------
-	// each bear HAS one fish to eat
-	public function userProfile() {
-		return $this->hasOne('UserProfile'); // this matches the Eloquent model
+	public function userProfile()
+	{
+		return $this->hasOne('UserProfile');
 	}
 
+	public function role()
+	{
+		return $this->belongsToMany('Role', 'user_roles');
+	}
 }

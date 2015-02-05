@@ -14,6 +14,7 @@ class SubadminCreateValidator extends abstractValidator
         'country'    => 'required',
         'state'      => 'required',
         'city'       => 'required',
-        'roles'      => 'sometimes|required'
+        'roles'      => 'sometimes|required',
+        'email'      => 'required|email|unique:user,email'
     );
 }
