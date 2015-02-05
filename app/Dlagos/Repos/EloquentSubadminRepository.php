@@ -70,4 +70,15 @@ class EloquentSubadminRepository implements SubadminInterface
 
     }
 
+    public function delete($id)
+    {
+        \DB::transaction(function($id) {
+
+            $user = \User::find($id);
+            $profile = $user->profile;
+            $user->delete();
+            $profile->delete();
+
+        });
+    }
 }

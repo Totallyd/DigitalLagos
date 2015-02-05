@@ -84,6 +84,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth'), function() {
 
     Route::get('managesubadmin', 'SubadminController@getIndex');
     Route::get('edit-subadmin/{id}', 'SubadminController@getEdit');
+    Route::get('delete-subadmin/{id}', 'SubadminController@getDelete');
     Route::post('edit-subadmin/{id}', 'SubadminController@postEdit');
     Route::get('addsubadmin', 'SubadminController@getCreate');
     Route::post('addsubadmin', 'SubadminController@postCreate');

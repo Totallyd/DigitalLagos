@@ -91,10 +91,23 @@ class SubadminController extends \BaseController
 
             $this->subadmin->update(Input::all(), $id);
 
-            return Redirect::to('admin/addsubadmin')->withSuccess('Successfully Created Record.');
+            return Redirect::to('admin/edit-subadmin/'.$id)->withSuccess('Successfully Updated Record.');
 
         }catch (Exception $e) {
-            return Redirect::to('admin/addsubadmin')->withInput()->withError('Something unexpected happend. Please try again.');
+            return Redirect::to('admin/managesubadmin')->withInput()->withError('Something unexpected happend. Please try again.');
+        }
+    }
+
+    public function getDelete($id)
+    {
+        try {
+
+            $this->subadmin->delete($id);
+
+            return Redirect::to('admin/managesubadmin/')->withSuccess('Successfully Deleted Record.');
+
+        }catch (Exception $e) {
+            return Redirect::to('admin/managesubadmin')->withInput()->withError('Something unexpected happend. Please try again.');
         }
     }
 }
