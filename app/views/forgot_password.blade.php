@@ -9,12 +9,22 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="dl-form">
-                    {{ Form::open(array('url' => '', 'id'=>'dl-form', 'class'=>'form')) }}
+                    {{ Form::open(array('url' => '/forgotpassword', 'id'=>'dl-form', 'class'=>'form')) }}
                         <div class="row">
                             <div class="col-md-6">
                                 <header>
                                     <h2>Forgot Password</h2>
                                 </header>
+                                @if (Session::has('error'))
+                                    <div class="flash bg-danger alert">
+                                      <p>{{ Session::get('error') }}</p>
+                                    </div>
+                                  @endif
+                                  @if (Session::has('success'))
+                                    <div class="flash alert alert-success">
+                                      <p>{{ Session::get('success') }}</p>
+                                    </div>
+                                  @endif
                                 <article>
                                     <div class="form-group">
                                         <label for="email">Email Address <span class="required">*</span>
