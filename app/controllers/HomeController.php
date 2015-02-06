@@ -120,7 +120,7 @@ class HomeController extends BaseController {
 	       });
 
           $response = $this->getPasswordRemindResponse();
-        
+          	
           if ($this->isInvalidUser($response)) {
             return Redirect::back()
               ->withInput()
@@ -134,6 +134,9 @@ class HomeController extends BaseController {
 	          ->withInput()
 	          ->with("error", "Your email address is invalid");
       	}
+      	return Redirect::back()
+	          ->withInput()
+	          ->with("success", "An email has been sent to you ");
     }
 
     if(Auth::check()){
