@@ -1,5 +1,6 @@
 <?php namespace Dlagos\Repos;
 
+use DB;
 use Dlagos\Contracts\SubadminInterface;
 use Illuminate\Support\Facades\Hash;
 use User;
@@ -72,13 +73,15 @@ class EloquentSubadminRepository implements SubadminInterface
 
     public function delete($id)
     {
-        \DB::transaction(function($id) {
+        try {
+            DB::table('user')->where('id', '=', $id)->delete();
+            DB::table('user_profile')->where('user_id', '=', $id)->delete();
+            DB::table('user_roles')->where('user_id', '=', $id)->delete();
+            return true;
+        }catch(Exception $e){
+            \Log::error($e);
+            return false;
+        }
 
-            $user = \User::find($id);
-            $profile = $user->profile;
-            $user->delete();
-            $profile->delete();
-
-        });
     }
 }
