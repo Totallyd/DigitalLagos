@@ -33,10 +33,37 @@ class MemberDashboardController extends BaseController {
   public function viewProfile($id){
     $user = User::find($id);
     $userProfile = UserProfile::whereUserId($id)->first();
+    
+    $roles[2] = 'Digital Entertainment';
+    $roles[3] = 'Broadcast Media';
+    $roles[4] = 'Content production';
+    $roles[5] = '3D Game Animation';
+    $roles[6] = 'Motion graphics';
+    $roles[7] = 'Music, Video production/report';
+    $roles[8] = 'Publishing';
+    $roles[9] = 'Communications';
+    $roles[10] = 'Graphic Design';
+    $roles[11] = 'Web Design';
+    $roles[12] = 'Web Development';
+    $roles[13] = 'Multimedia Producer Creative';
+    $roles[14] = 'Advertising'; 
+    $roles[15] = 'Marketing PR';
+    $roles[16] = 'Sales/Marketing';
+    $roles[17] = 'Production co-ordinator';
+    $roles[18] = 'Artist management';
+    $roles[19] = 'Artist';
+    $roles[20] = 'Performing artist';
+    $roles[21] = 'Photography';
+    $roles[22] = 'Producer';
+    $roles[23] = 'Club /artist promotion';
+    $roles[24] = 'Film/video production';
+    $roles[25] = 'Music production';
+    $roles[26] = 'Student';
+    $roles[27] = 'Other';
 
     // show the edit form and pass the nerd
     return View::make('view_profile')
-      ->with(array('user'=> $user, 'userProfile' => $userProfile));
+      ->with(array('user'=> $user, 'userProfile' => $userProfile,'roles'=>$roles));
   }
 
   public function editProfile($id)

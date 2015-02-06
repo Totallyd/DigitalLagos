@@ -12,13 +12,25 @@
                         <header>
                             <h1>Get in Touch</h1>
                         </header>
+                        @if (Session::has('error'))
+                        <div class="flash bg-danger alert">
+                          <p>{{ Session::get('error') }}</p>
+                        </div>
+                      @endif
+                      @if (Session::has('success'))
+                        <div class="flash alert alert-success">
+                          <p>{{ Session::get('success') }}</p>
+                        </div>
+                      @endif
                     </div>
                 </article>
             </div>
+
+            
             <div class="row">
                 <div class="col-md-12">
                     <div class="dl-form reg-form">
-                        <form id="dl-form" class="form" method="post" action="">
+                        <form id="dl-form" class="form" method="post" action="/get-in-touch">
                             <div class="row">
                                 <div class="col-md-6">
                                     <header>
