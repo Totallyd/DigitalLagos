@@ -120,7 +120,7 @@ class HomeController extends BaseController {
 	       });
 
           $response = $this->getPasswordRemindResponse();
-        
+          	
           if ($this->isInvalidUser($response)) {
             return Redirect::back()
               ->withInput()
@@ -134,6 +134,9 @@ class HomeController extends BaseController {
 	          ->withInput()
 	          ->with("error", "Your email address is invalid");
       	}
+      	return Redirect::back()
+	          ->withInput()
+	          ->with("success", "An email has been sent to you ");
     }
 
     if(Auth::check()){
@@ -217,15 +220,27 @@ class HomeController extends BaseController {
 
 	            Mail::send('emails.contact_us', $credentials , function($message)
 	            {
-	                $message->to('gr8.abbasi@gmail.com', 'info@digitallagos.tv')->subject('Get in Touch :: Digitallagos.Tv');
+	                $message->to('hello@digitallagos.tv', 'info@digitallagos.tv')->subject('Get in Touch :: Digitallagos.Tv');
 	            });
-	            return Redirect::to('contact-us')->with('success', 'Email has been sent successfully, support will contact you shortly.');
+	            return Redirect::to('get-in-touch')->with('success', 'Email has been sent successfully, support will contact you shortly.');
         }else{
-        	return Redirect::to('contact-us')->with('error', 'Something went wrong, please try again later.');
+        	return Redirect::to('get-in-touch')->with('error', 'Something went wrong, please try again later.');
         }
 
     } else {
-        return View::make('contactus');
+
+    	if(Auth::check()) 
+    	{
+
+    		$id = Auth::id();
+    		$userProfile = UserProfile::whereUserId($id)->first();
+    		return View::make('contactus',array('userProfile' => $userProfile));
+    	}else
+    	{
+    		return View::make('contactus');	
+    	}
+
+        
     }
  }
 
